@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Game.css';
 
 function Game(props) {
+
+  const [gameOver, setGameOver] = useState(true);
+  const [winner, setWinner] = useState('');
+  // Доску тоже надо поставить для всех игроков
+  // const [player1Deck, setPlayer1Deck] = useState([]);
+  const [turn, setTurn] = useState('');
+  const [playerCard, setPlayerCard] = useState([]);
+  // сделать время которое сейчас? день или ночь?
+
+
+  // useEffect - зарандомить роли
+
+  
   return (
     <>
     

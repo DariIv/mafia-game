@@ -9,10 +9,12 @@ function Home(props) {
   }
   return (
     <>
-      <div className="card bg-dark text-white startGame">
-        <img src="https://irk.today/wp-content/uploads/2020/10/obzor-mafia-definitive-edition-remeyk-legendy-18-let-spustya-2.jpg" className="card-img" alt="..." />
-        <div className="card-img-overlay btn">
-          <button onClick={navigateGame} className='btn btn-dark' style={{zoom: '2'}} >START GAME</button>
+      <div className='tipoBody'>
+        <div className="card bg-dark text-white startGame">
+          <img src="https://irk.today/wp-content/uploads/2020/10/obzor-mafia-definitive-edition-remeyk-legendy-18-let-spustya-2.jpg" className="card-img" alt="..." />
+          <div className="card-img-overlay btn">
+            <button onClick={navigateGame} className='btn btn-dark' style={{ zoom: '2' }} >START GAME</button>
+          </div>
         </div>
       </div>
     </>

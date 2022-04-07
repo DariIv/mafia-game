@@ -1,0 +1,36 @@
+.hm-gradient {
+  background-image: linear-gradient(
+    to top,
+    #f3e7e9 0%,
+    #e3eeff 99%,
+    #e3eeff 100%
+  );
+}
+
+#headerFooter{
+  background: #2e333a;
+  color: red ;
+}
+
+/* .navbar-collapse{
+  flex-grow: 0;
+} */
+
+#center-header{
+  justify-content: center;
+}
+
+#right-header{
+  justify-content: right;
+}
+
+.logo{
+ align-items: center;
+}
+
+.navbar .dropdown-menu a:hover {
+  color: #616161 ;
+}
+.darken-grey-text {
+  color: #2e2e2e;
+}

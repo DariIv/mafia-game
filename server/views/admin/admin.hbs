@@ -1,0 +1,55 @@
+<script defer src='/js/admin/admin.js'></script>
+
+<br />
+
+<div id='addAdminButtonContainer'> </div>
+
+<div style='display:flex; justify-content:right'>
+  <div style='position:fixed; z-index: 100; margin:0 40px'>
+    <form id='addAdminButton' action='/admin/add' method='get'>
+      <button class='btn btn-dark' type='submit'>Добавить новое место</button>
+    </form>
+  </div>
+</div>
+
+<div id='addAdminFormContainer'>
+
+  <div style='display:flex; justify-content: center; flex-wrap: wrap'>
+    {{#each bars}}
+      <div
+        class='fullwrap'
+        style='box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); margin: 20px'
+      >
+        <img src='/img/{{bar_photo_name}}' />
+        <div
+          class='fullcap'
+          style='padding:10px; display:flex; flex-direction:column; justify-content:space-around'
+        >
+          <div style='font-size:40px'>{{bar_title}}</div>
+
+          <hr />
+
+          <div style='font-size:25px'>{{bar_type}}</div>
+
+          <div style='font-size:20px'>{{bar_city}},
+            {{bar_street}}
+            {{bar_house}}</div>
+
+          <div style='font-size:15px'>Средний чек: {{bar_price}}</div>
+
+          <div style='display:flex; justify-content:space-around'>
+            <a
+              href='/admin/change/{{id}}'
+              class='btn btn-outline-light'
+            >Изменить</a>
+            <a
+              href='/admin/delete/{{id}}'
+              class='btn btn-outline-light'
+            >Удалить</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</div>

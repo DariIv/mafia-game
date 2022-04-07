@@ -123,8 +123,6 @@
   #poker-skin-v1 .poker-skin-v1-main-container .poker-table .poker-table-sub-container .poker-table-sub-container-grid .poker-table-grid-cell:nth-child(4){
   grid-column: 1;  
   grid-row:3;  
-  background-color:#316AD2;  
-  border:3px solid #fff;  
   position:absolute;  
   margin-top:5em;
   margin-left:-25em;   

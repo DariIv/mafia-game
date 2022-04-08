@@ -11,8 +11,7 @@
     "db-migrate": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate",
     "db-seed": "npx sequelize db:seed:undo:all && npx sequelize db:seed:all",
     "DC": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
-
- }, 
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

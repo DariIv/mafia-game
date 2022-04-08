@@ -28,10 +28,10 @@ import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionType
 //     },
 //   };
 // };
-
+const initState = () => {}  //// TEST
 const initialState = { Game: initState(16) }
 
-export const studentsReducer = (state = initialState, action) => {
+export const gameReducer = (state = initialState, action) => {
   switch (action.type) { 
     case INIT_GAME:
       return { ...state, ...action.game };

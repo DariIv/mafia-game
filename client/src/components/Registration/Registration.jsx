@@ -25,28 +25,29 @@ function Registration(props) {
       user_email: emailValue.current.value,
       user_password: passwordValue.current.value
     }
-    console.log('qwe');
-    fetch('/registration', {
+    // console.log('qwe');
+    fetch('http://localhost:4000/registration', {
       method: 'POST',
       headers: { 'Content-Type': 'Application/json' },
       body: JSON.stringify(newUser)
     })
-      .then(res => res.json())
-
-      .then(data => {
-        if (data.status === 400) {
+    .then(res => res.json())
+    
+    .then(data => {
+      console.log(data);
+      if (data.status === 400) {
           console.log(message.status);
-          setMessage(data.message)
-          setErrCheck(true)
-        }
-        if (data.status === 200) {
-          setMessage(data.message)
-          setErrCheck(false)
-          setSucCheck(true)
-          // console.log('привет');
-          setTimeout(() => {
-            navigate('/game')
-          }, 2000)
+            setMessage(data.message)
+            setErrCheck(true)
+          }
+          if (data.status === 200) {
+              setMessage(data.message)
+              setErrCheck(false)
+              setSucCheck(true)
+              console.log('привет');
+              setTimeout(() => {
+                  navigate('/')
+          }, 1000)
         }
       })
       .then(data => dispatch(addUserAc(data)))
@@ -108,25 +109,25 @@ function Registration(props) {
 
           <div className="form-box">
 
-            <form action="#" className="form form_signup" onSubmit={addUser}>
+            <form className="form form_signup" onSubmit={addUser}>
               <h3 className="form_title">Рега</h3>
               <p>
-                <input type="text" ref={loginValue} className="form_input" placeholder="Логин" />
+                <input name='login' type="text" ref={loginValue} className="form_input" placeholder="Логин" />
               </p>
               <p>
-                <input type="email" ref={emailValue} className="form_input" placeholder="email" />
+                <input name='email' type="email" ref={emailValue} className="form_input" placeholder="email" />
               </p>
               <p>
-                <input type="password" ref={passwordValue} className="form_input" placeholder="Пароль" />
+                <input name='password' type="password" ref={passwordValue} className="form_input" placeholder="Пароль" />
               </p>
               {/* <p>
                 <input type="password" className="form_input" placeholder="Подтвердите пароль" />
               </p> */}
               <p>
-                <button className="form_btn form_btn_signup"  >Зарегаться</button>
+                <button type='submit' className="form_btn form_btn_signup"  >Зарегаться</button>
               </p>
               <p>
-                <a href="" className="form_forgot">Востановить пароль</a>
+                <a className="form_forgot">Востановить пароль</a>
               </p>
             </form>
 

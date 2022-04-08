@@ -2,55 +2,12 @@
   height:47em;
   
   }
-  
-  #poker-skin-v1 #challenge-completed{
-  background-color:#fff;
-  height:10em;
-  width:45%;
-  border-radius:0.5em;  
-  display:flex;
-  flex-direction:column;  
-  justify-content:center;  
-  align-items:center;  
-  z-index:3;  
-  position:relative;
-  margin-left:0.5em;
-  margin-top:0.5em;    
-  }
-  
-  #poker-skin-v1 #challenge-completed .exit{
-  position:absolute;
-  margin-left:22.8em;
-  margin-top:-4.5em;  
-  }
-  
-  #poker-skin-v1 #challenge-completed .exit img{
-  position:absolute;  
-  cursor:pointer;  
-  }
-  
-  #poker-skin-v1 #challenge-completed h4 { 
-  margin-top:0.2em;  
-  opacity:0.5;
-  }
-  
-  #poker-skin-v1 #challenge-completed #progress-bar{
-  background-color:#2764AA;
-  height:0.3em;  
-  width:10%;  
-  position:absolute;
-  margin-top:5em;
-  margin-left:-21.9em;  
-  z-index:4;  
-  }
-  
-  
-  #poker-skin-v1 .poker-skin-v1-main-container{
+
+ .poker-skin-v1-main-container {
   display:flex;
   justify-content:center;
   align-items:center;  
-  width:100%;
-  z-index:2;  
+  width:100%; 
   }
   
   
@@ -123,8 +80,6 @@
   #poker-skin-v1 .poker-skin-v1-main-container .poker-table .poker-table-sub-container .poker-table-sub-container-grid .poker-table-grid-cell:nth-child(4){
   grid-column: 1;  
   grid-row:3;  
-  background-color:#316AD2;  
-  border:3px solid #fff;  
   position:absolute;  
   margin-top:5em;
   margin-left:-25em;   
@@ -558,7 +513,7 @@
   color:#fff; 
   position:relative; 
   display:flex;
-  jusitfy-content:center; 
+  justify-content:center; 
   align-items:center;    
     
   }

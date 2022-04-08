@@ -10,6 +10,8 @@ router.route('/').post(async (req, res) => {
   // 2 Вариант
   const { user_name, user_email, user_password } = req.body;
 
+  console.log(req.body);
+
   // const post = (status, message) => ({
   //   status,
   //   message,
@@ -27,7 +29,7 @@ router.route('/').post(async (req, res) => {
   const password = regexpPassword.test(user_password);
 
   if (data) {
-res.json({status:400,message: 'Почта уже используется'});
+    res.json({ status: 400, message: 'Почта уже используется' });
   } else {
   // } else if (user_name.length === 0 && user_email.length === 0 && user_password.length === 0) {
   //   res.json(post(400, 'Остались незаполненные поля'));
@@ -45,7 +47,7 @@ res.json({status:400,message: 'Почта уже используется'});
     });
 
     req.session.user_data = dataOne;
-    res.json({status:200,message: `Приветствую, ${user_name}`});
+    res.json({ status: 200, message: `Приветствую, ${user_name}` });
   }
 });
 

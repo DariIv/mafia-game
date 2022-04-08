@@ -20,9 +20,6 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game" element={<Game />} /> 
-          <Route path="/chat" element={<Chat />} /> 
-         {/* <Route path="*" element={<Error404 />} />  */}
-        
         </Routes>
       </BrowserRouter>
     </Provider>

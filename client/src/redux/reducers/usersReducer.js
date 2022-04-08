@@ -5,6 +5,9 @@ export const usersReducer = (state = initialState, action) => {
     case 'INIT_USERS':
       return { ...state, users: action.payload }
 
+    case "ADD_USERS":
+      return { ...state, users: [...state.users, action.payload]}  
+
     default:
       return state
   }

@@ -10,10 +10,11 @@ router.route('/').post(async (req, res) => {
   // 2 Вариант
   const { user_name, user_email, user_password } = req.body;
 
-  const post = (status, message) => ({
-    status,
-    message,
-  });
+  // const post = (status, message) => ({
+  //   status,
+  //   message,
+  // });
+  // console.log(req.body);
 
   const data = await User.findOne({ where: { user_email } });
 
@@ -26,24 +27,25 @@ router.route('/').post(async (req, res) => {
   const password = regexpPassword.test(user_password);
 
   if (data) {
-    res.json(post(400, 'Почта уже используется'));
-  } else if (user_name.length === 0 && user_email.length === 0 && user_password.length === 0) {
-    res.json(post(400, 'Остались незаполненные поля'));
-  } else if (!email) {
-    res.json(post(400, 'Неверно указано почтовый адрес'));
-  } else if (!password) {
-    res.json(post(400, 'Пароль должен содержать не менее 8 символов и состоять из спец. символов, строчных и заглавных букв'));
+res.json({status:400,message: 'Почта уже используется'});
   } else {
+  // } else if (user_name.length === 0 && user_email.length === 0 && user_password.length === 0) {
+  //   res.json(post(400, 'Остались незаполненные поля'));
+  // } else if (!email) {
+  //   res.json(post(400, 'Неверно указано почтовый адрес'));
+  // } else if (!password) {
+  //   res.json(post(400, 'Пароль должен содержать не менее 8 символов и состоять из спец. символов, строчных и заглавных букв'));
+  // } else {
     const newPass = await bcrypt.hash(user_password, 10);
 
-    const data = await User.create({
+    const dataOne = await User.create({
       user_name,
       user_email,
       user_password: newPass,
     });
 
-    req.session.user_data = data;
-    res.json(post(200, `Приветствую, ${user_name}`));
+    req.session.user_data = dataOne;
+    res.json({status:200,message: `Приветствую, ${user_name}`});
   }
 });
 

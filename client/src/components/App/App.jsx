@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { store } from '../../redux/store'
 import './App.css'
+import Error404 from '../Error404/Error404'
 
 
 import Navigation from "../Navigation/Navigation";
@@ -18,8 +19,7 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game" element={<Game />} /> 
-         {/* <Route path="*" element={<Error404 />} />  */}
-        
+         <Route path="*" element={<Error404 />} /> 
         </Routes>
       </BrowserRouter>
     </Provider>

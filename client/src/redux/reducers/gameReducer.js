@@ -29,20 +29,20 @@ import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionType
 //   };
 // };
 
-const initialState = { Game: initState(16) }
+// const initialState = { Game: initState(16) }
 
-export const studentsReducer = (state = initialState, action) => {
-  switch (action.type) { 
-    case INIT_GAME:
-      return { ...state, ...action.game };
-    case UPDATE_PLAYERS:
-      return { ...state, players: [...action.players] };
-    case VOTE_PLAYER:
-      return { ...state, players: [...action.players] };
-    case TICK_TIME:
-      return { ...state, ...action.game };
+// export const gameReducer = (state = initialState, action) => {
+//   switch (action.type) { 
+//     case INIT_GAME:
+//       return { ...state, ...action.game };
+//     case UPDATE_PLAYERS:
+//       return { ...state, players: [...action.players] };
+//     case VOTE_PLAYER:
+//       return { ...state, players: [...action.players] };
+//     case TICK_TIME:
+//       return { ...state, ...action.game };
 
-    default:
-      return state
-  }
-}
+//     default:
+//       return state
+//   }
+// }

@@ -7,6 +7,7 @@ import './App.css'
 import Navigation from "../Navigation/Navigation";
 import Home from '../Home/Home';
 import Game from "../Game/Game";
+import Rules from "../Rules/Rules"
 
 function App(props) {
   return (
@@ -19,7 +20,7 @@ function App(props) {
           <Route path="/" element={<Home />} />
           <Route path="/game" element={<Game />} /> 
          {/* <Route path="*" element={<Error404 />} />  */}
-        
+         <Route path="/rules" element={<Rules />} /> 
         </Routes>
       </BrowserRouter>
     </Provider>

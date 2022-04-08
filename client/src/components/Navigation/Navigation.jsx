@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navigation.css'
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
@@ -15,6 +16,9 @@ function Navigation() {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/">Играть</a>
+          </li>
+          <li className="nav-item">
+            <Link to='/rules' className="nav-link" >Правила</Link>
           </li>
         </ul>
       </div>

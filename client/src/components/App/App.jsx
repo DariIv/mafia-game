@@ -9,6 +9,9 @@ import Navigation from "../Navigation/Navigation";
 import Home from '../Home/Home';
 import Game from "../Game/Game";
 import Chat from "../Chat/Chat";
+import Room from '../Room/Room';
+import Main from '../Main/Main';
+
 
 function App(props) {
   return (
@@ -20,6 +23,8 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game" element={<Game />} /> 
+          <Route path="/room/:id" element={<Room />} />
+          <Route path="/video" element={<Main />} />
         </Routes>
       </BrowserRouter>
     </Provider>

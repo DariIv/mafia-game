@@ -1,9 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import './Navigation.css'
 
 function Navigation() {
+
+  // const {user} = useSelector(state => state)
+
   return (
-    <nav className="main mb-4 navbar navbar-expand-lg navbar-dark" id="headerFooter">
+    <nav className="main navbar navbar-expand-lg navbar-dark" id="headerFooter">
 
       <div className="collapse navbar-collapse col-4" id="left-header">
         <ul className="navbar-nav mr-auto">
@@ -14,7 +18,7 @@ function Navigation() {
             <a className="nav-link" href="/">Роли</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">Играть</a>
+            <a className="nav-link" href="/game">Играть</a>
           </li>
         </ul>
       </div>
@@ -26,14 +30,11 @@ function Navigation() {
           </li>
         </ul>
       </div>
-      
+
       <div className="collapse navbar-collapse col-4" id="right-header">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">Логин <span className="sr-only"></span></a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">Регистрация</a>
+            <a className="nav-link"  href="/registration"><i className="fa fa-user-secret" aria-hidden="true" id="rightIcon"></i> <span className="sr-only"></span></a>
           </li>
         </ul>
       </div>

@@ -6,11 +6,14 @@ import './App.css'
 
 
 import Navigation from "../Navigation/Navigation";
-import Home from '../Home/Home';
+import Registration from "../Registration/Registration";
+import Footer from "../Footer/Footer";
 import Game from "../Game/Game";
-import Chat from "../Chat/Chat";
+import Home from '../Home/Home';
 import Room from '../Room/Room';
 import Main from '../Main/Main';
+
+// import Chat from "../Chat/Chat";
 
 
 function App(props) {
@@ -22,13 +25,19 @@ function App(props) {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/game" element={<Game />} /> 
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/game" element={<Game />} />
           <Route path="/room/:id" element={<Room />} />
           <Route path="/video" element={<Main />} />
+          {/* <Route path="*" element={<Error404 />} /> */}
         </Routes>
+
+        <Footer />
+
       </BrowserRouter>
+
     </Provider>
-        
+
   );
 }
 

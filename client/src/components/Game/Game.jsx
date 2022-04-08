@@ -92,7 +92,6 @@ function Game(props) {
 
               </div>
             </div>
-
           </div>
         </div>
 

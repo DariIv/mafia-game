@@ -1,5 +1,4 @@
 import io from 'socket.io-client';
-import { changeRoomStatAC, changeRoomStatFinished } from '../redux/actions/room.actions';
 
 let socket;
 export let currentRoom = [];
@@ -11,13 +10,16 @@ export const initSocket = ({
 	roomHash,
 	userId,
 	roomId,
-	creator
+	creator,
+  setCurrentUsers,
+  setFullRoom,
+  room
 }) => {
 	socket = io(process.env.REACT_APP_SERVER_HOST);
-	if (socket && roomHash && userId && roomId) socket.emit('join', { roomHash, userId, roomId, isCreator });
+	if (socket && roomHash && userId && roomId) socket.emit('join', { roomHash, userId, roomId, creator });
 
 
-// установка текущего числа пользователей в комнате
+// сколько пользователей в комнате
 	socket.on('currentUsers', (currentUsers) => {
 		setCurrentUsers(currentUsers);
 		if (currentUsers.length === room['max_players']) {
@@ -26,4 +28,6 @@ export const initSocket = ({
 			setFullRoom(false);
 		}
 	});
-}
+};
+
+// начало игры, создатель покинул комнату, комната не найдена, сама игра, отключить сокеты в конце

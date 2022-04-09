@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.bodyReg {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: green; */
+}
+
+/* .bodyReg.active{
+  background-color: blue;
+} */
+
+/* контейнер  */
+
+.container {
+  width: 800px;
+  height: 500px;
+  padding: 40px;
+
+  position: relative;
+  /* outline: solid; */
+}
+
+.block {
+  height: 100%;
+  background-color: hsl(0, 0%, 100%, 0.3);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+}
+
+.block_item {
+  width: 50%;
+}
+
+
+/* элементы блока */
+
+.block-item {
+  text-align: center;
+}
+
+.block-item_title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* .block-item_btn {
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+} */
+
+
+/* элементы форма */
+
+.form-box {
+  /* background-color: white; */
+  height: 100%;
+  width: 50%;
+  box-shadow: 0 5px 45px hsl(0, 0%, 0%, 0.25);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  transition: 0.5s ease-in-out;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+.form-box.active {
+  left: 50%;
+}
+
+
+.form {
+  width: 100%;
+  padding: 50px;
+  font-size: 16px;
+
+  position: absolute;
+  transition: 0.5s;
+}
+
+.form_signin {
+  left: 100%;
+  transition: 0.25s;
+}
+
+.form_signup {
+  left: 0;
+  transition: 0;
+}
+
+.form-box.active .form_signin{
+  left: -100%;
+  transition: 0;
+}
+
+.form-box.active .form_signup{
+  left: 0;
+  transition: 0.25s;
+}
+
+.form.tittle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form_input {
+  width: 100%;
+  padding: 10px;
+  border: solid 1px #333;
+  font-size: inherit;
+}
+
+.form_btn {
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  background-color: rgb(90, 90, 250);
+  color: white;
+  padding: 10px 50px;
+}
+
+
+.form_btn_signup {
+  background-color: rgb(220, 72, 72);
+  color: white;
+}
+
+.form_forgot {
+  color: #333;
+}

@@ -3,4 +3,17 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+const initialState = {
+  user: {
+		value: {},
+		error: null
+	},
+   	game: [],
+  	room: {},
+	waitingRooms: {
+		value: [],
+		error: null
+	}
+};
+
+export const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)));

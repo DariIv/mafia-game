@@ -28,21 +28,21 @@ import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionType
 //     },
 //   };
 // };
-const initState = () => {}  //// TEST
-const initialState = { Game: initState(16) }
 
-export const gameReducer = (state = initialState, action) => {
-  switch (action.type) { 
-    case INIT_GAME:
-      return { ...state, ...action.game };
-    case UPDATE_PLAYERS:
-      return { ...state, players: [...action.players] };
-    case VOTE_PLAYER:
-      return { ...state, players: [...action.players] };
-    case TICK_TIME:
-      return { ...state, ...action.game };
+// const initialState = { Game: initState(16) }
 
-    default:
-      return state
-  }
-}
+// export const gameReducer = (state = initialState, action) => {
+//   switch (action.type) { 
+//     case INIT_GAME:
+//       return { ...state, ...action.game };
+//     case UPDATE_PLAYERS:
+//       return { ...state, players: [...action.players] };
+//     case VOTE_PLAYER:
+//       return { ...state, players: [...action.players] };
+//     case TICK_TIME:
+//       return { ...state, ...action.game };
+
+//     default:
+//       return state
+//   }
+// }

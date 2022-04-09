@@ -24,6 +24,7 @@
     "express-session": "^1.17.2",
     "freeice": "^2.2.2",
     "hbs": "^4.2.0",
+    "http": "^0.0.1-security",
     "multer": "^1.4.4",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",

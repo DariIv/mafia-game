@@ -4,7 +4,6 @@ import { store } from '../../redux/store'
 import './App.css'
 
 
-
 import Navigation from "../Navigation/Navigation";
 import Registration from "../Registration/Registration";
 import Footer from "../Footer/Footer";
@@ -14,7 +13,7 @@ import Room from '../Room/Room';
 import Main from '../Main/Main';
 
 // import Chat from "../Chat/Chat";
-
+import Error404 from '../Error404/Error404'
 
 function App(props) {
   return (
@@ -25,11 +24,14 @@ function App(props) {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/game" element={<Game />} /> 
+         <Route path="*" element={<Error404 />} /> 
+
           <Route path="/registration" element={<Registration />} />
           <Route path="/game" element={<Game />} />
           <Route path="/room/:id" element={<Room />} />
           <Route path="/video" element={<Main />} />
-          {/* <Route path="*" element={<Error404 />} /> */}
+    
         </Routes>
 
         <Footer />

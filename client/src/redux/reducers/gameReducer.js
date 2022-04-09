@@ -1,4 +1,4 @@
-import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionTypes/gameAT';
+// import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionTypes/gameAT';
 
 
 // const initState = (num: number): Game => {

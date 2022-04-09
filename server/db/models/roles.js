@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    // static associate({ Question }) {
-    //   Role.hasMany(Question, { foreignKey: 'theme_id' });
-    // }
+    static associate(models) {
+      
+    }
   }
   Role.init({
     id: {
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    mafia_role: {
+    title: {
       allowNull: false,
       type: DataTypes.STRING,
     },

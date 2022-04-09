@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsToMany(models.Room, { through: models.UserInRoom, foreignKey: 'user_id' });
 			this.hasMany(models.UserInRoom, { foreignKey: 'user_id', onDelete: 'CASCADE' });
-			this.hasMany(models.Roles, { foreignKey: 'user_id' });
     }
   }
   User.init({

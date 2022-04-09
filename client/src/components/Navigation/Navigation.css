@@ -8,7 +8,7 @@
 }
 
 #headerFooter{
-  background: #2e333a;
+  background: #082a3400;
   color: red ;
 }
 
@@ -22,6 +22,10 @@
 
 #right-header{
   justify-content: right;
+}
+
+#rightIcon{
+  font-size: 25px;
 }
 
 .logo{

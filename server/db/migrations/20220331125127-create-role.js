@@ -7,7 +7,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      mafia_role: {
+      title: {
         allowNull: false,
         type: Sequelize.STRING,
       },

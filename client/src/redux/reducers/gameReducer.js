@@ -1,4 +1,4 @@
-import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionTypes/gameAT';
+// import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionTypes/gameAT';
 
 
 // const initState = (num: number): Game => {
@@ -31,7 +31,7 @@ import { INIT_GAME, UPDATE_PLAYERS, VOTE_PLAYER, TICK_TIME } from '../actionType
 
 // const initialState = { Game: initState(16) }
 
-// export const studentsReducer = (state = initialState, action) => {
+// export const gameReducer = (state = initialState, action) => {
 //   switch (action.type) { 
 //     case INIT_GAME:
 //       return { ...state, ...action.game };

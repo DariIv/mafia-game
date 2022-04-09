@@ -9,7 +9,6 @@ const registrationRouter = require('./routes/registrationRouter.route');
 const loginRouter = require('./routes/loginRouter.route');
 const sessionRouter = require('./routes/sessionRouter.route');
 
-// const { Server: SocketIOServer } = require('socket.io');
 const { Game, Room, UserInRooms } = require('./db/models');
 
 const app = express();
@@ -132,61 +131,46 @@ io.on('connection', (socket) => {
   });
 });
 
-
 // SOCKETS FUNCTIONS
 // функции для сокетов !!
 const {
   addUserInRoom,
   allUsersInRoom,
+  getUsersInRoomSocket,
+  getMaxUsers,
 } = require('./utils/funcsForRooms');
 
-
-// const httpServer = http.createServer(app);
-
-// const io = new SocketIOServer(httpServer, {
-// 	cors: {
-// 		origin: 'http://localhost:3000',
-// 		methods: [ 'GET', 'POST' ]
-// 	}
-// });
-
-// app.use(
-// 	cors({
-// 		credentials: true,
-// 		origin: [
-// 			'http://localhost:3001',
-// 			'http://localhost:3000'
-// 		]
-// 	})
-// );
-
 app.use((req, res, next) => {
-	if (req.session) {
-		res.locals.userId = req.session.userId;
-		res.locals.username = req.session.username;
-		res.locals.email = req.session.email;
-	}
-	next();
+  if (req.session) {
+    res.locals.userId = req.session.userId;
+    res.locals.username = req.session.username;
+    res.locals.email = req.session.email;
+  }
+  next();
 });
 
 // Сокеты, юзер в комнате
-let socketStore = {};
+const socketStore = {};
 
-// подключить юзера в комнату
-socket.on('join', async ({ roomHash, userId, roomId, roleId, creator, isAlive, socketId }) => {
-  const userInSocketRoom = getUsersInRoomSocket(io, roomHash);
-  const maxUsersInRoom = await getMaxUsers(roomId);
-  if (userInSocketRoom < maxUsersInRoom) {
-    socket.join(roomHash);
+io.on('connection', (socket) => {
+  // подключить юзера в комнату
+  socket.on('join', async ({
+    roomHash, userId, roomId, roleId, creator, isAlive, socketId,
+  }) => {
+    const userInSocketRoom = getUsersInRoomSocket(io, roomHash);
+    const maxUsersInRoom = await getMaxUsers(roomId);
+    if (userInSocketRoom < maxUsersInRoom) {
+      socket.join(roomHash);
 
-    const usersInRoom = await addUserInRoom(userId, roomId, roleId,сreator, isAlive, socket.id);
-    socketStore[roomHash] = {};
-    socketStore[roomHash].users = usersInRoom;
+      const usersInRoom = await addUserInRoom(userId, roomId, roleId, сreator, isAlive, socket.id);
+      socketStore[roomHash] = {};
+      socketStore[roomHash].users = usersInRoom;
 
-    io.to(roomHash).emit('currentUsers', usersInRoom);
-  } else {
-    io.to(socket.id).emit('roomFull');
-  }
+      io.to(roomHash).emit('currentUsers', usersInRoom);
+    } else {
+      io.to(socket.id).emit('roomFull');
+    }
+  });
 });
 
 // убрать юзера из комнаты
@@ -194,6 +178,9 @@ socket.on('join', async ({ roomHash, userId, roomId, roleId, creator, isAlive, s
 // стастистика
 
 app.listen(PORT, () => {
-httpServer.listen(4000, () => {
-  console.log(`*** Working at PORT: ${PORT} ***`);
+  httpServer.listen(4001, () => {
+    console.log(`*** Working at PORT: ${PORT} ***`);
+  });
 });
+
+module.exports = io;

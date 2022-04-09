@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-			this.belongsTo(models.Game, { foreignKey: 'game_id' });
-			this.belongsToMany(models.User, { through: models.UserInRoom, foreignKey: 'room_id' });
-			this.hasMany(models.UserInRoom, { foreignKey: 'room_id', onDelete: 'CASCADE' });
+      this.belongsTo(models.Game, { foreignKey: 'game_id' });
+      this.belongsToMany(models.User, { through: models.UserInRoom, foreignKey: 'room_id' });
+      this.hasMany(models.UserInRoom, { foreignKey: 'room_id', onDelete: 'CASCADE' });
     }
   }
   Room.init({
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     game_id: {
       type: DataTypes.INTEGER,
@@ -27,13 +27,13 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     max_players: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     room_hash: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
   }, {
     sequelize,

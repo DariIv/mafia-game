@@ -4,6 +4,7 @@ const { createServer } = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const config = require('./config/config');
+const app = express();
 
 const registrationRouter = require('./routes/registrationRouter.route');
 const loginRouter = require('./routes/loginRouter.route');
@@ -11,7 +12,6 @@ const sessionRouter = require('./routes/sessionRouter.route');
 
 const { Game, Room, UserInRooms } = require('./db/models');
 
-const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: { origin: '*' },
@@ -22,7 +22,7 @@ const ACTIONS = require('../client/src/socket/actions');
 app.get('/', (req, res) => { });
 
 io.on('connection', (socket) => {
-  // console.log(socket.id);
+  console.log(socket.id);
   socket.on('chat message', (msg) => {
     console.log(msg);
     io.emit('chat message', msg);
@@ -177,10 +177,10 @@ io.on('connection', (socket) => {
 // нужен сокет для запуска игры, роли, сокет для состояний игры(чтобы появлялись день и ночь)
 // стастистика
 
-app.listen(PORT, () => {
-  httpServer.listen(4001, () => {
+// app.listen(PORT, () => {
+  httpServer.listen(4000, () => {
     console.log(`*** Working at PORT: ${PORT} ***`);
   });
-});
+// });
 
 module.exports = io;

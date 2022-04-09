@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 import Game from "../Game/Game";
 import Home from '../Home/Home';
 import Room from '../Room/Room';
-import Main from '../Main/Main';
+
 
 // import Chat from "../Chat/Chat";
 
@@ -28,7 +28,6 @@ function App(props) {
           <Route path="/registration" element={<Registration />} />
           <Route path="/game" element={<Game />} />
           <Route path="/room/:id" element={<Room />} />
-          <Route path="/video" element={<Main />} />
           {/* <Route path="*" element={<Error404 />} /> */}
         </Routes>
 

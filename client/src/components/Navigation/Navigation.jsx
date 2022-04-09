@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
 import './Navigation.css'
+import { Link } from 'react-router-dom';
 
 function Navigation() {
 
@@ -19,6 +20,9 @@ function Navigation() {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/game">Играть</a>
+          </li>
+          <li className="nav-item">
+            <Link to='/rules' className="nav-link" >Правила</Link>
           </li>
         </ul>
       </div>

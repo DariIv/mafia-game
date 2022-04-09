@@ -8,4 +8,3 @@ export const rootReducer = combineReducers({
   messReducer,
   gameReducer
 });
-

@@ -1,19 +1,15 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class UserInRoom extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-     static associate(models) {
+    static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'user_id', onDelete: 'CASCADE' });
       this.belongsTo(models.Room, { foreignKey: 'room_id', onDelete: 'CASCADE' });
     }
   }
+
   UserInRoom.init({
     user_id: {
       type: DataTypes.INTEGER,
@@ -29,12 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
-    role_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Roles',
-        key: 'id',
-      },
+    role: {
+      type: DataTypes.ENUM,
+      values: ['Мирный житель', 'Мафия', 'Доктор', 'Детектив', 'Мертвец'],
     },
     creator: {
       type: DataTypes.BOOLEAN,

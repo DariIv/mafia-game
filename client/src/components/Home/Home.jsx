@@ -5,6 +5,7 @@ import ACTIONS from '../../socket/actions';
 import { useNavigate } from 'react-router';
 import { v4 } from 'uuid';
 import './Home.css'
+import Taimer from '../Taimer/Taimer';
 
 function Home(props) {
   const navigate = useNavigate()
@@ -21,6 +22,7 @@ function Home(props) {
 
   return (
     <>
+    <Taimer />
       <div className='tipoBody' ref={rootNode}>
         <div className="card bg-dark text-white startGame">
           <img src="https://irk.today/wp-content/uploads/2020/10/obzor-mafia-definitive-edition-remeyk-legendy-18-let-spustya-2.jpg" className="card-img" alt="..." />

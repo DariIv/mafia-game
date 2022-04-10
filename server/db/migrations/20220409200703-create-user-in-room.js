@@ -22,12 +22,9 @@ module.exports = {
           key: 'id',
         },
       },
-      role_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Roles',
-          key: 'id',
-        },
+      role: {
+        type: Sequelize.ENUM,
+        values: ['Мирный житель', 'Мафия', 'Доктор', 'Детектив', 'Мертвец'],
       },
       creator: {
         type: Sequelize.BOOLEAN,

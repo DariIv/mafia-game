@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './Navigation.css'
+import { Link } from 'react-router-dom';
 
 function Navigation() {
 
@@ -20,6 +21,9 @@ function Navigation() {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/game">Играть</Link>
+          </li>
+          <li className="nav-item">
+            <Link to='/rules' className="nav-link" >Правила</Link>
           </li>
         </ul>
       </div>

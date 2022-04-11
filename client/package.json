@@ -9,6 +9,7 @@
     "filereader": "^0.10.3",
     "freeice": "^2.2.2",
     "react": "^17.0.2",
+    "react-countdown-circle-timer": "^3.0.9",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",

@@ -4,6 +4,7 @@ const { createServer } = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const config = require('./config/config');
+const app = express();
 
 // добавлять файлы на сайт
 
@@ -13,7 +14,8 @@ const registrationRouter = require('./routes/registrationRouter.route');
 const loginRouter = require('./routes/loginRouter.route');
 const sessionRouter = require('./routes/sessionRouter.route');
 
-const app = express();
+const { Game, Room, UserInRooms } = require('./db/models');
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: { origin: '*' },
@@ -24,7 +26,7 @@ const ACTIONS = require('../client/src/socket/actions');
 app.get('/', (req, res) => { });
 
 io.on('connection', (socket) => {
-  // console.log(socket.id);
+  console.log(socket.id);
   socket.on('chat message', (msg) => {
     console.log(msg);
     io.emit('chat message', msg);
@@ -139,6 +141,56 @@ io.on('connection', (socket) => {
   });
 });
 
-httpServer.listen(4000, () => {
-  console.log(`*** Working at PORT: ${PORT} ***`);
+// SOCKETS FUNCTIONS
+// функции для сокетов !!
+const {
+  addUserInRoom,
+  allUsersInRoom,
+  getUsersInRoomSocket,
+  getMaxUsers,
+} = require('./utils/funcsForRooms');
+
+app.use((req, res, next) => {
+  if (req.session) {
+    res.locals.userId = req.session.userId;
+    res.locals.username = req.session.username;
+    res.locals.email = req.session.email;
+  }
+  next();
 });
+
+// Сокеты, юзер в комнате
+const socketStore = {};
+
+io.on('connection', (socket) => {
+  // подключить юзера в комнату
+  socket.on('join', async ({
+    roomHash, userId, roomId, roleId, creator, isAlive, socketId,
+  }) => {
+    const userInSocketRoom = getUsersInRoomSocket(io, roomHash);
+    const maxUsersInRoom = await getMaxUsers(roomId);
+    if (userInSocketRoom < maxUsersInRoom) {
+      socket.join(roomHash);
+
+      const usersInRoom = await addUserInRoom(userId, roomId, roleId, сreator, isAlive, socket.id);
+      socketStore[roomHash] = {};
+      socketStore[roomHash].users = usersInRoom;
+
+      io.to(roomHash).emit('currentUsers', usersInRoom);
+    } else {
+      io.to(socket.id).emit('roomFull');
+    }
+  });
+});
+
+// убрать юзера из комнаты
+// нужен сокет для запуска игры, роли, сокет для состояний игры(чтобы появлялись день и ночь)
+// стастистика
+
+// app.listen(PORT, () => {
+  httpServer.listen(4000, () => {
+    console.log(`*** Working at PORT: ${PORT} ***`);
+  });
+// });
+
+module.exports = io;

@@ -5,6 +5,10 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const config = require('./config/config');
 
+// добавлять файлы на сайт
+
+// const fileUpload = require('express-fileupload');
+
 const registrationRouter = require('./routes/registrationRouter.route');
 const loginRouter = require('./routes/loginRouter.route');
 const sessionRouter = require('./routes/sessionRouter.route');
@@ -34,6 +38,12 @@ config(app);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/session', sessionRouter);
+
+// добавление фото профиля
+// app.use(fileUpload({
+//   createParenrPath: true,
+// }));
+
 // Video
 io.on('connection', (socket) => {
   console.log('Socket connected');

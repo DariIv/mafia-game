@@ -21,12 +21,12 @@ router.route('/').post(async (req, res) => {
 
     if (pass) {
       req.session.user_data = data;
-      res.json(post(200, `Приветствую, ${data.user_name}`));
+      res.json({ status: 200, message: `Приветствую, ${data.user_name}`, name: data.user_name });
     } else {
       res.json(post(400, 'Неверный пароль'));
     }
   } else {
-    res.json(post(400, 'Такой почты не существует'));
+    res.json(post(400, `Такой почты не существует ${user_email}`));
   }
 });
 

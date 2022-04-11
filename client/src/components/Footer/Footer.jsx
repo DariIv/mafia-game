@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function Footer(props) {
   return (
@@ -7,7 +8,7 @@ function Footer(props) {
     <div className="collapse navbar-collapse col-4" id="center-header">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">Mafia <span className="sr-only"></span></a>
+            <Link className="nav-link" to="/">Mafia<span className="sr-only" /></Link>
           </li>
         </ul>
       </div>

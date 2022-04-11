@@ -11,6 +11,8 @@ import Game from "../Game/Game";
 import Rules from "../Rules/Rules"
 import Home from '../Home/Home';
 import Room from '../Room/Room';
+import Main from '../Main/Main';
+import Profile from "../Profile/Profile";
 
 
 // import Chat from "../Chat/Chat";
@@ -25,6 +27,7 @@ function App(props) {
         <Navigation /> 
 
         <Routes>
+
          <Route path="/" element={<Home />} />
          <Route path="/rules" element={<Rules />} /> 
          <Route path="*" element={<Error404 />} /> 

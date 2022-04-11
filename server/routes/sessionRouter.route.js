@@ -7,6 +7,9 @@ router.get('/', async (req, res) => {
     const user = await User.findByPk(id);
     console.log(user);
     res.json(user);
+  } else {
+    console.log(req.session);
+    res.json(req.session);
   }
 });
 module.exports = router;

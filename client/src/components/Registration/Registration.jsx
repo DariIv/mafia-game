@@ -66,6 +66,7 @@ function Registration(props) {
           setSucCheck(true)
           console.log('привет рег');
           dispatch(addUserAc(data));
+          localStorage.setItem('user_name', data.name)
           setTimeout(() => {
             navigate('/profile')
           }, 1000)
@@ -84,7 +85,7 @@ function Registration(props) {
       user_email: valueEmail.current.value,
       user_password: valuePassword.current.value
     }
-    console.log(userChek, 'llllll')
+    
     fetch('http://localhost:4000/login', {
       method: 'POST',
       headers: { 'Content-Type': 'Application/json' },
@@ -105,6 +106,7 @@ function Registration(props) {
           setSucCheck(true)
           dispatch(addUserAc(data));
           console.log('привет лог');
+          localStorage.setItem('user_name', data.name)
           setTimeout(() => {
             navigate('/profile')
           }, 1000)
@@ -218,6 +220,7 @@ function Registration(props) {
 
   return (
     <section className="forms-section">
+      <div>
       <h1 className="section-title">Registration</h1>
       <div className="forms">
         <div className={cl}>
@@ -264,6 +267,7 @@ function Registration(props) {
             <button type="submit" className="btn-signup">Continue</button>
           </form>
         </div>
+      </div>
       </div>
     </section>
   );

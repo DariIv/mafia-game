@@ -1,40 +1,54 @@
 .hm-gradient {
-  background-image: linear-gradient(
-    to top,
-    #f3e7e9 0%,
-    #e3eeff 99%,
-    #e3eeff 100%
-  );
+  background-image: linear-gradient(to top,
+      #f3e7e9 0%,
+      #e3eeff 99%,
+      #e3eeff 100%);
 }
 
-#headerFooter{
+#headerFooter {
+  font-size: 20px;
   background: #082a3400;
-  color: red ;
+  color: red;
 }
 
 /* .navbar-collapse{
   flex-grow: 0;
 } */
 
-#center-header{
+#center-header {
   justify-content: center;
 }
 
-#right-header{
+#right-header {
   justify-content: right;
 }
 
-#rightIcon{
-  font-size: 25px;
+#rightIcon {
+  font-size: 45px;
 }
 
-.logo{
- align-items: center;
+.logo {
+  align-items: center;
 }
 
 .navbar .dropdown-menu a:hover {
-  color: #616161 ;
+  color: #616161;
 }
+
 .darken-grey-text {
   color: #2e2e2e;
 }
+
+.nav-link-center {
+  /* position: relative;  */
+  /* top: -20px;  */
+  /* left: -20px; */
+}
+
+.position{
+  display: flex;
+  justify-content: space-around;}
+
+  A:active {
+    color: #ffff00; /* Цвет активных ссылок */
+   }

@@ -2,7 +2,7 @@ import { GET_VOTES, ADD_VOTE, RESET_VOTES } from '../actionTypes/votesAT';
 
 const defaultVotes = {};
 
-export default function(state = defaultVotes, action) {
+export const votesReducer = (state = defaultVotes, action) => {
   switch (action.type) {
     
     case GET_VOTES:

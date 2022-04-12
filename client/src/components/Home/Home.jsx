@@ -7,7 +7,10 @@ import { v4 } from 'uuid';
 import './Home.css'
 import Taimer from '../Taimer/Taimer';
 
+import { useDispatch } from 'react-redux'
+
 function Home(props) {
+  // const dispatch = useDispatch()
   const navigate = useNavigate()
   const [rooms, updateRooms] = useState([]); //список
   const rootNode = useRef();
@@ -18,8 +21,10 @@ function Home(props) {
         updateRooms(rooms);   //обновляем комнаты когда они приходят
       }
     });
+    
   }, []);
-
+  
+  // console.log('local storage =>', localStorage.getItem('user_name'));
   return (
     <>
     <Taimer />
@@ -34,7 +39,7 @@ function Home(props) {
               <li key={roomID}>
                 {/* {roomID} */}
  
-                  <button class="btn btn-secondary" onClick={() => {
+                  <button className="btn btn-secondary" onClick={() => {
                     navigate(`/room/${roomID}`)  //добавляем комнаты
                   }}>JOIN ROOM</button>
                
@@ -43,7 +48,7 @@ function Home(props) {
           </ul>
 
    
-            <button class="btn btn-secondary" onClick={() => {
+            <button className="btn btn-secondary" onClick={() => {
               navigate(`/room/${v4()}`)  //создаем свою комнату, генерим комнату и айдишку
             }}>CREATE NEW ROOM</button>
           

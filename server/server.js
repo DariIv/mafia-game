@@ -4,6 +4,7 @@ const { createServer } = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const config = require('./config/config');
+
 const app = express();
 
 // добавлять файлы на сайт
@@ -12,7 +13,8 @@ const app = express();
 
 const registrationRouter = require('./routes/registrationRouter.route');
 const loginRouter = require('./routes/loginRouter.route');
-const sessionRouter = require('./routes/sessionRouter.route');
+const logouRouter = require('./routes/logoutRouter.route');
+// const sessionRouter = require('./routes/sessionRouter.route');
 
 const { Game, Room, UserInRooms } = require('./db/models');
 
@@ -39,7 +41,8 @@ config(app);
 
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
-app.use('/session', sessionRouter);
+app.use('/logout', logouRouter);
+// app.use('/session', sessionRouter);
 
 // добавление фото профиля
 // app.use(fileUpload({
@@ -188,9 +191,9 @@ io.on('connection', (socket) => {
 // стастистика
 
 // app.listen(PORT, () => {
-  httpServer.listen(4000, () => {
-    console.log(`*** Working at PORT: ${PORT} ***`);
-  });
+httpServer.listen(4000, () => {
+  console.log(`*** Working at PORT: ${PORT} ***`);
+});
 // });
 
 module.exports = io;

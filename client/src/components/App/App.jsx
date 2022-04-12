@@ -5,18 +5,18 @@ import './App.css'
 
 
 import Navigation from "../Navigation/Navigation";
-import Registration from "../Registration/Registration";
-import Footer from "../Footer/Footer";
+import Profile from "../Profile/Profile";
 import Game from "../Game/Game";
 import Rules from "../Rules/Rules"
+import Registration from "../Registration/Registration";
 import Home from '../Home/Home';
 import Room from '../Room/Room';
-import Main from '../Main/Main';
-import Profile from "../Profile/Profile";
+import Footer from "../Footer/Footer";
 
 
 // import Chat from "../Chat/Chat";
 import Error404 from '../Error404/Error404'
+import Logout from "../Logout/Logout";
 
 
 function App(props) {
@@ -24,17 +24,21 @@ function App(props) {
     <Provider store={store}>
       <BrowserRouter>
 
-        <Navigation /> 
+        <Navigation />
 
         <Routes>
 
-         <Route path="/" element={<Home />} />
-         <Route path="/rules" element={<Rules />} /> 
-         <Route path="*" element={<Error404 />} /> 
-         <Route path="/registration" element={<Registration />} />
-         <Route path="/game" element={<Game />} />
-         <Route path="/room/:id" element={<Room />} />
-         <Route path="/video" element={<Main />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/rules" element={<Rules />} />
+
+          <Route path="/" element={<Home />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="*" element={<Error404 />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/room/:id" element={<Room />} />
+          <Route path="/logout" element={<Logout />} />
+
 
         </Routes>
 

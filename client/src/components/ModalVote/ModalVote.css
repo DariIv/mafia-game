@@ -1,0 +1,39 @@
+.modalWrapper{
+  position: fixed;
+  bottom:0;
+  width:100%;
+  background: rgba(0,0,0, .2);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.openModalWrapper{
+  height: 100%;
+  display: block;
+}
+
+.closedModalWrapper{
+  height: 0;
+  display: none;
+}
+
+.modalBody{
+  width: 70%;
+  margin: auto;
+  background: rgb(131, 125, 125);
+  margin-top: 5%;
+  padding: 20px;
+  border-radius: 10px;
+  height: 70%;
+  overflow-y: scroll;
+}
+
+.modalBody::-webkit-scrollbar{
+  width:0%;
+  background: transparent
+}
+
+.modalBody {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

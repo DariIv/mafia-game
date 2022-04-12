@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5a1fe0a6.css",
+    "main.js": "/static/js/main.f20ff331.js",
+    "static/media/timer-bell.mp3": "/static/media/timer-bell.875f5fcf480f47d15b05.mp3",
+    "index.html": "/index.html",
+    "main.5a1fe0a6.css.map": "/static/css/main.5a1fe0a6.css.map",
+    "main.f20ff331.js.map": "/static/js/main.f20ff331.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a1fe0a6.css",
+    "static/js/main.f20ff331.js"
+  ]
+}

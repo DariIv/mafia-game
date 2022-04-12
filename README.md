@@ -1,1 +1,1 @@
-# mafia-game
+# mafia_test

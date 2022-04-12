@@ -41,6 +41,7 @@ export default function useWebRTC(roomID) {
           socket.emit(ACTIONS.RELAY_ICE, {
             peerID,
             iceCandidate: event.candidate,
+            users: {user: 'vottema'}
           });
         }
       }
@@ -156,8 +157,8 @@ export default function useWebRTC(roomID) {
       localMediaStream.current = await navigator.mediaDevices.getUserMedia({
         audio: true,
         video: {
-          width: 1280,
-          height: 720,
+          width: 360,
+          height: 240,
         }
       });
 

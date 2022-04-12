@@ -34,13 +34,13 @@ Chat
 --------------------*/
 .chat {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 60%;
+  left: 83%;
   transform: translate(-50%, -50%);
   width: 300px;
   height: 80vh;
   max-height: 500px;
-  z-index: 2;
+  z-index: 1;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   background: rgba(5, 78, 107, 0.5);
@@ -303,5 +303,3 @@ Custom Srollbar
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
-
-

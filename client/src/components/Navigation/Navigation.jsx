@@ -8,18 +8,15 @@ function Navigation() {
   // const {user} = useSelector(state => state)
 
   return (
-    <nav className="main navbar navbar-expand-lg navbar-dark" id="headerFooter">
+    <nav className="main navbar navbar-expand-lg navbar-dark">
 
-      <div className="collapse navbar-collapse col-4" id="left-header">
+      <div className="collapse navbar-collapse col-4">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">Профиль <span className="sr-only"></span></a>
+            {/* <Link className="nav-link" to="/">Роли</Link> */}
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">Роли</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/game">Играть</a>
+            <Link className="nav-link" to="/">Играть</Link>
           </li>
           <li className="nav-item">
             <Link to='/rules' className="nav-link" >Правила</Link>
@@ -30,7 +27,7 @@ function Navigation() {
       <div className="collapse navbar-collapse col-4" id="center-header">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">Mafia <span className="sr-only"></span></a>
+            <Link className="nav-link" to="/">Mafia <span className="sr-only"></span></Link>
           </li>
         </ul>
       </div>
@@ -38,7 +35,7 @@ function Navigation() {
       <div className="collapse navbar-collapse col-4" id="right-header">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link"  href="/registration"><i className="fa fa-user-secret" aria-hidden="true" id="rightIcon"></i> <span className="sr-only"></span></a>
+            <Link className="nav-link"  to="/registration"><i className="fa fa-user-secret" aria-hidden="true" id="rightIcon"></i> <span className="sr-only"></span></Link>
           </li>
         </ul>
       </div>

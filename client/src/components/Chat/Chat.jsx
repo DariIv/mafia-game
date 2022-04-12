@@ -36,7 +36,7 @@ function Chat(props) {
   const user = 'Vottema:'
   return (
     <>
-
+     <div className='chatWrap'>
       <div className="chat">
         <div className="chat-title">
         </div>
@@ -52,7 +52,8 @@ function Chat(props) {
           </div>
         </form>
       </div>
-      <div className="bg"></div>
+      </div>
+      {/* <div className="bg"></div> */}
     </>
   );
 }

@@ -25,7 +25,6 @@ function Registration(props) {
       user_email: emailValue.current.value,
       user_password: passwordValue.current.value
     }
-    // console.log('qwe');
     fetch('/registration', {
       credentials: 'include',
       method: 'POST',

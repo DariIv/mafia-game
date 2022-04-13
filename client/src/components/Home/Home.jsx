@@ -20,7 +20,7 @@ function Home(props) {
       }
     });
   }, []);
-
+  console.log(rooms);
   return (
     <>
       {/* <Taimer /> */}
@@ -31,24 +31,21 @@ function Home(props) {
 
           <ul>
             {rooms.map(roomID => (
-              <li key={roomID}>
+              <span key={roomID}>
                 {/* {roomID} */}
-
                 <button className="btn btn-secondary" onClick={() => {
                   navigate(`/room/${roomID}`)  //добавляем комнаты
                 }}>JOIN ROOM</button>
 
-              </li>
+              </span>
             ))}
           </ul>
-
           <button className="btn btn-secondary" onClick={() => {
             navigate(`/room/${v4()}`)  //создаем свою комнату, генерим комнату и айдишку
-          }}>CREATE NEW ROOM</button>
-
+          }}>CREATE NEW 1ROOM</button>
         </div>
       </div>
-      
+
     </>
   );
 }

@@ -7,4 +7,4 @@ const options = {
   transports : ["websocket"]
 }
 
-export const socket = io(process.env.PORT, options)
+export const socket = io('http://localhost:4000/', options)

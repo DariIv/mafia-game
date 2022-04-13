@@ -20,7 +20,7 @@ const io = new Server(httpServer, {
   cors: { origin: '*' },
   credentials: true,
 });
-// app.use(cors({ origin: ['http://localhost:3000', 'https://mafia-test-all.herokuapp.com/'], credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 const ACTIONS = require('./client/src/socket/actions');
 
 app.get('/', (req, res) => { });
@@ -186,7 +186,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 // app.listen(PORT, () => {
-httpServer.listen(PORT, () => {
+httpServer.listen(process.env.PORT, () => {
   console.log(`*** Working at PORT: ${PORT} ***`);
 });
 // });

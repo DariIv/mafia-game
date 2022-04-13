@@ -27,22 +27,19 @@ function Home(props) {
       <div className='tipoBody' ref={rootNode}>
         <div className="card bg-dark text-white startGame">
           <img src="https://irk.today/wp-content/uploads/2020/10/obzor-mafia-definitive-edition-remeyk-legendy-18-let-spustya-2.jpg" className="card-img" alt="..." />
-          <h3>Available Rooms</h3>
+          {rooms.length ?
+              rooms.map(roomID => (
+                
+                  <button className="btn btn-secondary" onClick={() => {
+                    navigate(`/room/${roomID}`)  //добавляем комнаты
+                  }}>START GAME</button>
 
-          <ul>
-            {rooms.map(roomID => (
-              <span key={roomID}>
-                {/* {roomID} */}
-                <button className="btn btn-secondary" onClick={() => {
-                  navigate(`/room/${roomID}`)  //добавляем комнаты
-                }}>JOIN ROOM</button>
-
-              </span>
-            ))}
-          </ul>
-          <button className="btn btn-secondary" onClick={() => {
-            navigate(`/room/${v4()}`)  //создаем свою комнату, генерим комнату и айдишку
-          }}>CREATE NEW 1ROOM</button>
+              ))
+            :
+            <button className="btn btn-secondary" onClick={() => {
+              navigate(`/room/${v4()}`)  //создаем свою комнату, генерим комнату и айдишку
+            }}>START NEW GAME</button>
+          }
         </div>
       </div>
 

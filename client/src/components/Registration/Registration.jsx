@@ -7,15 +7,6 @@ import './Registation.css'
 
 function Registration(props) {
 
-  // const switchers = [...document.querySelectorAll('.switcher')]
-
-  // switchers.forEach(item => {
-  //   item.addEventListener('click', function () {
-  //     switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-  //     this.parentElement.classList.add('is-active')
-  //   })
-  // })
-
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -35,7 +26,6 @@ function Registration(props) {
 
 
   // рега
-
   const addUser = (event) => {
     event.preventDefault()
 
@@ -75,9 +65,7 @@ function Registration(props) {
     // .then(data => dispatch(addUserAc(data)))
   }
 
-
   // логин
-
   const getUser = (event) => {
     event.preventDefault()
 
@@ -113,14 +101,7 @@ function Registration(props) {
       })
   }
 
-
   const classes = []
-
-  // const [state, setState] = useState(true)
-  // const [state1, setState1] = useState(false)
-
-  // var state = true;
-  // var state1 = false
 
   const [cl, setCl] = useState('form-wrapper is-active')
   const [cl1, setCl1] = useState('form-wrapper')
@@ -142,50 +123,15 @@ function Registration(props) {
       setCl1('form-wrapper')
     }
 
-    // switcher switcher-signup
-    // switcher switcher-login
-
-    // state = !state;
-    // state1 = !state1;
-
-    // console.log(state, state1);
-
-    // state === true ? setCl('form-wrapper is-active') : setCl('form-wrapper')
-    // state1 === true ? setCl1('form-wrapper is-active') : setCl1('form-wrapper')
-
-
     console.log(classes.join(' '))
 
     // console.log(context.target.className);
   }
 
-
-  // const sss = () => {
-
-
-  //   // setState(!state)
-  //   // console.log(state);
-  //   // setState1(!state1)
-  //   // console.log(state1);
-
-  //   state = !state;
-  //   state1 = !state1;
-
-  //   console.log(state,state1);
-
-  //   state === true ? setCl('form-wrapper is-active') : setCl('form-wrapper')
-  //   state1 === true ? setCl1('form-wrapper is-active') : setCl1('form-wrapper')
-  //   console.log(classes.join(' '))
-
-  // }
-
-
-  //  console.log(sss());
-
   return (
-    <section className="forms-section">
+
+    <section className="forms-section" >
       <div>
-      <h1 className="section-title">РЕГИСТРАЦИЯ</h1>
       <div className="forms">
         <div className={cl}>
           <button type="button" onClick={sss} className="switcher switcher-login">
@@ -214,7 +160,7 @@ function Registration(props) {
           </button>
           <form className="form form-signup" onSubmit={addUser}>
             <fieldset>
-              <legend>Please, enter your email, password and password confirmation htmlFor sign up.</legend>
+              <legend>Пожалуйста введите почту, имя и пароль.</legend>
               <div className="input-block">
                 <label htmlFor="signup-login">ИМЯ</label>
                 <input ref={loginValue} id="signup-login" type="login" required />

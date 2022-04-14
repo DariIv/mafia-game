@@ -8,24 +8,9 @@ import { socket } from '../../socket/socket.chat';
 
 function Taimer(props) {
 
-  // const [seconds, setSeconds] = useState(50)
   const [day, setDay] = useState(true)
   const [night, setNight] = useState(false)
   const [start,setStart] = useState(false)
-  // const [dayVote, setDayVote] = useState(true)
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setSeconds(seconds - 1)
-  //     if (seconds === 1) {
-  //       setSeconds(50)
-  //       setDayVote(setDayVote((prev) => !prev))
-  //       console.log(day);
-  //     }
-  //   }, 100)
-
-  //   return () => clearInterval(timer)
-  // }, [seconds])
 
   const soudBell = TaimeSound
 
@@ -43,12 +28,7 @@ function Taimer(props) {
   }
 
   const renderNight = ({ remainingTime }) => {
-    // socket.emit('remainingtime', {remainingTime})
-    // socket.on("timerUpdate", data => console.log(data)  );
-    // if(remainingTime === 10){
-    //   setDayVote(!dayVote)
-    //   console.log(dayVote);
-    // }
+
     if (remainingTime === 0) {
       setTimeout(() => {
         soundPlay(soudBell)
@@ -89,7 +69,6 @@ function Taimer(props) {
 
   return (
     <>
-      {/* <h1>{seconds}</h1> */}
       <div className={style.wrapper}>
         {day && (
           <div className={style.timerWrapper}>

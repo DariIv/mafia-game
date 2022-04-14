@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { store } from '../../redux/store'
-import './App.css'
+import style from './App.module.css'
 
 
 import Navigation from "../Navigation/Navigation";
@@ -22,7 +22,8 @@ function App(props) {
   return (
     <Provider store={store}>
       <BrowserRouter>
-
+        
+        <div className={style.width}>
         <Navigation /> 
 
         <Routes>
@@ -41,7 +42,7 @@ function App(props) {
         </Routes>
 
         <Footer />
-
+        </div>
       </BrowserRouter>
 
     </Provider>

@@ -1,8 +1,4 @@
-.chatDiv {
-  /* position: absolute; */
-  bottom: 100px;
-  left: 1120px;
-}
+
 .video {
   display: flex;
   margin: 3px;
@@ -22,10 +18,4 @@
   justify-content: start;
   flex-wrap: wrap;
   width: 1010px;
-  /* height: 100vh; */
-}
-
-.timerWrapper{
-  display: flex;
-  align-items: flex-start;
 }

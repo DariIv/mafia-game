@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './ModalVote.css'
+import { Voting } from '../Voting/Voting';
+import Container from '../Voting/Container';
 
 function ModalVote({night}) {
   return (
     <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
       <div className='modalBody'>
-        <h2>Голосование Началось!</h2>
-        Голосование
+        <Voting>
+          <Container/>
+        </Voting>
       </div>
     </div>
   );

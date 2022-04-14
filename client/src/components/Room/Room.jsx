@@ -26,6 +26,7 @@ export default function Room() {
         {clients.map((clientID, users, xz) => {
           return (
             <div className='blockVideo' key={clientID} id={clientID}>
+              <span> xz[users] </span>
               <video
                 className='video'
                 width='245px'

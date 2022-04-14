@@ -64,9 +64,7 @@ function Registration(props) {
           setMessage(data.message)
           setErrCheck(false)
           setSucCheck(true)
-          // console.log('привет рег');
-          // dispatch(addUserAc(data));
-          // localStorage.setItem('user_name', data.name)
+          localStorage.setItem('userName',  data.name)
           setTimeout(() => {
             window.location.href = '/'
             // navigate('/profile')
@@ -106,7 +104,6 @@ function Registration(props) {
           setErrCheck(false)
           setSucCheck(true)
           dispatch(addUserAc(data));
-          console.log('привет лог');
           localStorage.setItem('user_name', data.name)
           setTimeout(() => {
             window.location.href = '/'

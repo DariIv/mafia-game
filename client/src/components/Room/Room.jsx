@@ -20,6 +20,8 @@ export default function Room() {
   let role = ['мирный', 'мафия', 'мирный', 'мирный'];
   let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
+
+  let client = clients.map(el => el = {newClient:el, userName: localStorage.getItem('userName')})
   // let num ;
   // let el ;
 
@@ -41,20 +43,20 @@ export default function Room() {
       <div className='wrapper'>
         <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
         <div className='videoWrapper'>
-          {clients.map((clientID, index, xz) => {
+          {client.map((clientID, index, xz) => {
             return (
-              <div className='blockVideo' key={clientID} id={clientID}>
-                <span style={{ fontSize: '15px' }}>id:{clientID} </span>
+              <div className='blockVideo' key={clientID.newClient} id={clientID.newClient}>
+                <span style={{ fontSize: '15px' }}>id:{clientID.userName} </span>
                 <video
                   className='video'
                   width='245px'
                   height='140px'
                   ref={instance => {
-                    provideMediaRef(clientID, instance);
+                    provideMediaRef(clientID.newClient, instance);
                   }}
                   autoPlay
                   playsInline
-                  muted={clientID === LOCAL_VIDEO}
+                  muted={clientID.newClient === LOCAL_VIDEO}
                 />
               </div>
 

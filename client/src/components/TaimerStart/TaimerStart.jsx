@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Taimer from '../Taimer/Taimer';
 import { socket } from '../../socket/socket.chat';
+// import style from './TaimerStart.module.css'
 
 function TaimerStart(props) {
 
@@ -20,7 +21,7 @@ const startTimer = () => {
 
   return (
     <div>
-      {start ? (<Taimer />) : (<div><button onClick={startTimer}>START GAME</button></div>)}
+      {start ? (<Taimer />) : (<div><button className='btn btn-danger btn-lg' onClick={startTimer}>START GAME</button></div>)}
     </div>
   );
 }

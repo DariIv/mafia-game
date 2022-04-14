@@ -159,7 +159,7 @@ body {
     transform: translate(0, 0);
   }
   100% {
-    background: #d7e7f1;
+    background: #808080;
     transform: translate(40%, 10px);
   }
 }
@@ -195,7 +195,7 @@ body {
     transform: translate(0, 0) scaleY(0.8);
   }
   100% {
-    background: #d7e7f1;
+    background: #979797;
     transform: translate(-40%, 10px) scaleY(0.8);
   }
 }
@@ -237,7 +237,7 @@ body {
 
 .input-block label {
   font-size: 14px;
-  color: #a1b4b4;
+  color: #5c5c5c;
 }
 
 .input-block input {
@@ -249,8 +249,8 @@ body {
   font-size: 16px;
   line-height: 40px;
   color: #3b4465;
-  background: #eef9fe;
-  border: 1px solid #cddbef;
+  background: #f7f4f4;
+  border: 1px solid rgb(185, 185, 185);
   border-radius: 2px;
 }
 
@@ -274,14 +274,14 @@ body {
 
 .btn-login {
   color: #fbfdff;
-  background: #004755;
+  background: #2e2e2e;
   transform: translateX(-30%);
 }
 
 .btn-signup {
-  color: #004755;
+  color: #2e2e2e;
   background: #fbfdff;
-  box-shadow: inset 0 0 0 2px #004755;
+  box-shadow: inset 0 0 0 2px #868686;
   transform: translateX(30%);
 }
 
@@ -291,3 +291,4 @@ body {
   justify-content: center;
   align-items: center;
 }
+

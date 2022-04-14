@@ -1,17 +1,17 @@
-// import { useEffect, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import style from './Room.module.css';
 import Chat from '../Chat/Chat';
 import useWebRTC, { LOCAL_VIDEO } from '../customHooks/useWebRTC';
-import './Room.css'
-// import { socket } from '../../socket/socket.chat';
-// import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-// import { addNickAC } from '../../redux/actionCreators/chatAC';
 import { useCallback } from 'react';
 import TaimerStart from '../TaimerStart/TaimerStart';
 import ModalForPeople from '../ModalForPeople/ModalForPeople';
 let randomProfile = require('random-profile-generator');
 
+// import { useEffect, useLayoutEffect, useState } from 'react';
+// import { socket } from '../../socket/socket.chat';
+// import { useDispatch } from 'react-redux';
+// import { addNickAC } from '../../redux/actionCreators/chatAC';
 
 export default function Room() {
   // const dispatch = useDispatch()
@@ -25,17 +25,17 @@ export default function Room() {
   return (
     <>
 
-    <div className='wrapper'>
-     <div className='videoWrapper'>
+    <div className={style.wrapper}>
+     <div className={style.videoWrapper}>
 
         {clients.map((clientID, users, xz) => {
           return (
-            <div className='blockVideo' key={clientID} id={clientID}>
+            <div className={style.blockVideo} key={clientID} id={clientID}>
               <span> xz[users] </span>
               <video
-                className='video'
-                width='245px'
-                height='140px'
+                className={style.video}
+                width='320px'
+                height='200px'
                 ref={instance => {
                   provideMediaRef(clientID, instance);
                 }}

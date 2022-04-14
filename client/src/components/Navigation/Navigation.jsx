@@ -8,7 +8,7 @@ function Navigation(props) {
       <div>
         <Link className={style.mafiaColorLink} to='/'>MAFIA</Link>
       </div>
-      <div>
+      <div className={style.linksWrapper}>
         <Link className={style.links} to='/rules'>ПРАВИЛА</Link>
         <Link className={style.links} to='/registration'>ВОЙТИ</Link>
         <Link className={style.links} to='/'>ИГРАТЬ</Link>

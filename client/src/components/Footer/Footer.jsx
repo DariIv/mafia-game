@@ -7,11 +7,11 @@ function Footer(props) {
     <div className="collapse navbar-collapse col-4" id="center-header">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">Mafia <span className="sr-only"></span></a>
+         
           </li>
         </ul>
       </div>
-      </nav>
+   </nav>
       
   );
 }

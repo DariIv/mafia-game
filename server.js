@@ -9,6 +9,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.use(express.static(path.join(__dirname, 'client', 'build', 'static')));
 
+
 const registrationRouter = require('./routes/registrationRouter.route');
 const loginRouter = require('./routes/loginRouter.route');
 const sessionRouter = require('./routes/sessionRouter.route');
@@ -26,6 +27,7 @@ const ACTIONS = require('./client/src/socket/actions');
 app.get('/', (req, res) => { });
 
 io.on('connection', (socket) => {
+
   console.log(socket.id);
   console.log(socket.handshake.session);
   socket.on('chat message', (msg) => {
@@ -41,6 +43,7 @@ config(app, io);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/session', sessionRouter);
+
 // Video
 io.on('connection', (socket) => {
   console.log('Socket connected');
@@ -79,7 +82,6 @@ io.on('connection', (socket) => {
     io.emit('new-vote', votes);
   });
 // голосование
-
 
 
 

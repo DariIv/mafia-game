@@ -7,6 +7,15 @@ import './Registation.css'
 
 function Registration(props) {
 
+  // const switchers = [...document.querySelectorAll('.switcher')]
+
+  // switchers.forEach(item => {
+  //   item.addEventListener('click', function () {
+  //     switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+  //     this.parentElement.classList.add('is-active')
+  //   })
+  // })
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -57,6 +66,7 @@ function Registration(props) {
           setSucCheck(true)
           console.log('привет рег');
           dispatch(addUserAc(data));
+          localStorage.setItem('user_name', data.name)
           setTimeout(() => {
             navigate('/profile')
           }, 1000)
@@ -115,6 +125,7 @@ function Registration(props) {
   const [cl, setCl] = useState('form-wrapper is-active')
   const [cl1, setCl1] = useState('form-wrapper')
 
+
   function sss(context) {
 
     let curstr = context.target.className
@@ -131,61 +142,96 @@ function Registration(props) {
       setCl1('form-wrapper')
     }
 
+    // switcher switcher-signup
+    // switcher switcher-login
+
+    // state = !state;
+    // state1 = !state1;
+
+    // console.log(state, state1);
+
+    // state === true ? setCl('form-wrapper is-active') : setCl('form-wrapper')
+    // state1 === true ? setCl1('form-wrapper is-active') : setCl1('form-wrapper')
+
+
     console.log(classes.join(' '))
 
     // console.log(context.target.className);
   }
 
+
+  // const sss = () => {
+
+
+  //   // setState(!state)
+  //   // console.log(state);
+  //   // setState1(!state1)
+  //   // console.log(state1);
+
+  //   state = !state;
+  //   state1 = !state1;
+
+  //   console.log(state,state1);
+
+  //   state === true ? setCl('form-wrapper is-active') : setCl('form-wrapper')
+  //   state1 === true ? setCl1('form-wrapper is-active') : setCl1('form-wrapper')
+  //   console.log(classes.join(' '))
+
+  // }
+
+
+  //  console.log(sss());
+
   return (
     <section className="forms-section">
       <div>
-        {/* <h1 className="section-title">Registration</h1> */}
-        <div className="forms">
-          <div className={cl}>
-            <button type="button" onClick={sss} className="switcher switcher-login">
-              Вход
-              <span className="underline"></span>
-            </button>
-            <form className="form form-login" onSubmit={getUser}>
-              <fieldset>
-                {/* <p>Пожалуйста введите ваш email и пароль.</p> */}
-                <div className="input-block">
-                  <label htmlFor="login-email">E-mail</label>
-                  <input ref={valueEmail} id="login-email" type="email" required />
-                </div>
-                <div className="input-block">
-                  <label htmlFor="login-password">Пароль</label>
-                  <input ref={valuePassword} id="login-password" type="password" required />
-                </div>
-              </fieldset>
-              <button type="submit" className="btn-login">Войти</button>
-            </form>
-          </div>
-          <div className={cl1}>
-            <button type="button" onClick={sss} className="switcher switcher-signup">
-              Регистрация
-              <span className="underline"></span>
-            </button>
-            <form className="form form-signup" onSubmit={addUser}>
-              <fieldset>
-                {/* <legend>ПожалуйстаБ введите ваш email и пароль.</legend> */}
-                <div className="input-block">
-                  <label htmlFor="signup-login">Name</label>
-                  <input ref={loginValue} id="signup-login" type="login" required />
-                </div>
-                <div className="input-block">
-                  <label htmlFor="signup-email">E-mail</label>
-                  <input ref={emailValue} const emailValue id="signup-email" type="email" required />
-                </div>
-                <div className="input-block">
-                  <label htmlFor="signup-password">Пароль</label>
-                  <input ref={passwordValue} id="signup-password" type="password" required />
-                </div>
-              </fieldset>
-              <button type="submit" className="btn-signup">Зарегистрироваться</button>
-            </form>
-          </div>
+      <h1 className="section-title">РЕГИСТРАЦИЯ</h1>
+      <div className="forms">
+        <div className={cl}>
+          <button type="button" onClick={sss} className="switcher switcher-login">
+            ВХОД
+            <span className="underline"></span>
+          </button>
+          <form className="form form-login" onSubmit={getUser}>
+            <fieldset>
+              <legend>Пожалуйста, введите логин и пароль.</legend>
+              <div className="input-block">
+                <label htmlFor="login-email">ПОЧТА</label>
+                <input ref={valueEmail} id="login-email" type="email" required />
+              </div>
+              <div className="input-block">
+                <label htmlFor="login-password">ПАРОЛЬ</label>
+                <input ref={valuePassword} id="login-password" type="password" required />
+              </div>
+            </fieldset>
+            <button type="submit" className="btn-login">НАЧАТЬ</button>
+          </form>
         </div>
+        <div className={cl1}>
+          <button type="button" onClick={sss} className="switcher switcher-signup">
+            РЕГИСТРАЦИЯ
+            <span className="underline"></span>
+          </button>
+          <form className="form form-signup" onSubmit={addUser}>
+            <fieldset>
+              <legend>Please, enter your email, password and password confirmation htmlFor sign up.</legend>
+              <div className="input-block">
+                <label htmlFor="signup-login">ИМЯ</label>
+                <input ref={loginValue} id="signup-login" type="login" required />
+              </div>
+              <div className="input-block">
+                <label htmlFor="signup-email">ПОЧТА</label>
+                <input ref={emailValue} const emailValue id="signup-email" type="email" required />
+              </div>
+              <div className="input-block">
+                <label htmlFor="signup-password">ПАРОЛЬ</label>
+                <input ref={passwordValue} id="signup-password" type="password" required />
+              </div>
+            </fieldset>
+            <button type="submit" className="btn-signup">ПРОДОЛЖИТЬ</button>
+          </form>
+        </div>
+      </div>
       </div>
     </section>
   );

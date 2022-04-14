@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { socket, subscribeToNewMessages } from '../../socket/socket.chat';
 import Question from './Question';
 import Options from './Options';
-import './component.module.css';
+import style from './component.module.css';
 import { useVote } from './Voting';
 import { Pie } from 'react-chartjs-2';
 
@@ -24,8 +24,8 @@ function Container() {
   console.log(options);
   return (
     <div className="">
-      <div className="poll">
-        <div className="right">
+      <div className={style.poll}>
+        <div className={style.right}>
           <div className="question-header">
             <Question />
           </div>
@@ -34,8 +34,8 @@ function Container() {
             <Options />
           </div>
         </div>
-        <div className="left">
-          <div className="graph">
+        <div className={style.left}>
+          <div className={style.graph}>
             {' '}
             <Pie data={data} />
           </div>

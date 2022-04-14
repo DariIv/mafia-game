@@ -38,7 +38,6 @@ function App(props) {
 
 
          {/* <Route path="/video" element={<Main />} /> */}
-
         </Routes>
 
         <Footer />

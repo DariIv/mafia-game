@@ -1,16 +1,18 @@
+import ModalVote from '../ModalVote/ModalVote';
+import TaimeSound from './timer-bell.mp3'
+import style from './timerStyles.module.css'
 import React, { useState, useEffect } from 'react';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import style from './timerStyles.module.css'
-import TaimeSound from './timer-bell.mp3'
 import { Howl } from 'howler';
-import ModalVote from '../ModalVote/ModalVote';
+import { socket } from '../../socket/socket.chat';
 
 function Taimer(props) {
 
   // const [seconds, setSeconds] = useState(50)
   const [day, setDay] = useState(true)
   const [night, setNight] = useState(false)
-  const [dayVote, setDayVote] = useState(true)
+  const [start,setStart] = useState(false)
+  // const [dayVote, setDayVote] = useState(true)
 
   // useEffect(() => {
   //   const timer = setInterval(() => {
@@ -40,9 +42,9 @@ function Taimer(props) {
     return `${minutes}:${seconds}`
   }
 
-
-
   const renderNight = ({ remainingTime }) => {
+    // socket.emit('remainingtime', {remainingTime})
+    // socket.on("timerUpdate", data => console.log(data)  );
     // if(remainingTime === 10){
     //   setDayVote(!dayVote)
     //   console.log(dayVote);
@@ -130,7 +132,7 @@ function Taimer(props) {
 
               // initialRemainingTime={59} //хчерез сколько секунд начнется основной таймер
               isPlaying={true}             //можно навесить кнопку паузы (true/false)
-              duration={25}          //установка секунд
+              duration={50}          //установка секунд
               colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
               colorsTime={[45, 25, 10, 0]}
               onComplete={() => ({ shouldRepeat: true, delay: 15 })}

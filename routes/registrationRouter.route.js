@@ -47,7 +47,7 @@ router.route('/').post(async (req, res) => {
     });
 
     req.session.user_data = dataOne;
-    res.json({ status: 200, message: `Приветствую, ${user_name}`, name: user_name});
+    res.json({ status: 200, message: `Приветствую, ${user_name}`, name:user_name });
   }
 });
 

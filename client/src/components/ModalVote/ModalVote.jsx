@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ModalVote.css'
 import { Voting } from '../Voting/Voting';
 import Container from '../Voting/Container';

@@ -6,6 +6,7 @@ import Container from '../Voting/Container';
 function ModalVote({ night }) {
   return (
     <>
+      {localStorage.getItem('randomRole') === 'мирный' &&
         <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
           <div className='modalBody'>
             <Voting>
@@ -13,7 +14,7 @@ function ModalVote({ night }) {
             </Voting>
           </div>
         </div>
-      
+      }
     </>
   );
 }

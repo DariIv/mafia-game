@@ -40,7 +40,7 @@ export default function Room() {
 
       <div className='wrapper'>
         <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
-        <div className='videoWrapper' style={qwer && { backdropFilter: 'blur(30px)' }}>
+        <div className='videoWrapper'>
           {clients.map((clientID, index, xz) => {
             return (
               <div className='blockVideo' key={clientID} id={clientID}>

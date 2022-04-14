@@ -20,8 +20,11 @@
   color: red;
 }
 .graph {
-  width: 100px;
-  height: 100px;
+  width: 500px;
+  height: 500px;
+}
+.style.input {
+  font-size: 20px;
 }
 .button {
   font-size: 17px;

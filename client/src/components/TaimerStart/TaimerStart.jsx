@@ -5,7 +5,7 @@ import { socket } from '../../socket/socket.chat';
 
 function TaimerStart(props) {
 
-  const [start, setStart] = useState(false)
+  const [start, setStart] = useState(true)
 
 const startTimer = () => {
       socket.emit('StartTimer', 'start')

@@ -20,8 +20,8 @@ export default function Room() {
   let role = ['мирный', 'мафия', 'мирный', 'мирный'];
   let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
-
-  let client = clients.map(el => el = {newClient:el, userName: localStorage.getItem('userName')})
+  let name = ['giena', 'slon']
+  let client = clients.map((el,index) => el = {newClient:el, userName: name[index]})
   // let num ;
   // let el ;
 

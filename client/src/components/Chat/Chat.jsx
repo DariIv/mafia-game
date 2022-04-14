@@ -19,13 +19,13 @@ function Chat(props) {
       inputValue.current.value = ''
     }
   }
-   
+
   const scroll = useRef()
+
   useEffect(() => {
 
     socket.on('chat message', (msg) => {
       dispatch(addMessAC(msg))
-
       scroll.current.scrollIntoView(
         {
           behavior: 'smooth',
@@ -33,25 +33,26 @@ function Chat(props) {
     });
   }, [dispatch])
   //hard user
+
   const user = 'Vottema:'
   return (
     <>
-     <div className='chatWrap'>
-      <div className="chat">
-        <div className="chat-title">
-        </div>
-        <div className="messages">
-          <div className="messages-content mess">
-            {mess.length ? mess.map((el, index) => <div ref={scroll} className='message message-personal' key={index}><span style={{ color: 'black', zoom: '1.5' }}>{user}</span><br />{el}</div>) : ''}
+      <div className='chatWrap'>
+        <div className="chat">
+          <div className="chat-title">
           </div>
-        </div>
-        <form onSubmit={addMess}>
-          <div className="message-box">
-            <textarea ref={inputValue} type="text" className="message-input" placeholder="Type message..."></textarea>
-            <button type="submit" className="message-submit">Send</button>
+          <div className="messages">
+            <div className="messages-content mess">
+              {mess.length ? mess.map((el, index) => <div ref={scroll} className='message message-personal' key={index}><span style={{ color: 'black', zoom: '1.5' }}>{user}</span><br />{el}</div>) : ''}
+            </div>
           </div>
-        </form>
-      </div>
+          <form onSubmit={addMess}>
+            <div className="message-box">
+              <textarea ref={inputValue} type="text" className="message-input" placeholder="Type message..."></textarea>
+              <button type="submit" className="message-submit">Send</button>
+            </div>
+          </form>
+        </div>
       </div>
       {/* <div className="bg"></div> */}
     </>

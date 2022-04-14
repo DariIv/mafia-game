@@ -1,46 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
-import './Navigation.css'
 import { Link } from 'react-router-dom';
+import style from './Navigation.module.css'
 
-function Navigation() {
-
-  // const {user} = useSelector(state => state)
-
+function Navigation(props) {
   return (
-    <nav className="main navbar navbar-expand-lg navbar-dark">
-
-      <div className="collapse navbar-collapse col-4">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            {/* <Link className="nav-link" to="/">Роли</Link> */}
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/">Играть</Link>
-          </li>
-          <li className="nav-item">
-            <Link to='/rules' className="nav-link" >Правила</Link>
-          </li>
-        </ul>
+    <div className={style.nawWrapper}>
+      <div>
+        <Link className={style.mafiaColorLink} to='/'>MAFIA</Link>
       </div>
-
-      <div className="collapse navbar-collapse col-4" id="center-header">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/">Mafia <span className="sr-only"></span></Link>
-          </li>
-        </ul>
+      <div>
+        <Link className={style.links} to='/rules'>ПРАВИЛА</Link>
+        <Link className={style.links} to='/registration'>ВОЙТИ</Link>
+        <Link className={style.links} to='/'>ИГРАТЬ</Link>
       </div>
-
-      <div className="collapse navbar-collapse col-4" id="right-header">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link className="nav-link"  to="/registration"><i className="fa fa-user-secret" aria-hidden="true" id="rightIcon"></i> <span className="sr-only"></span></Link>
-          </li>
-        </ul>
-      </div>
-
-    </nav>
+    </div>
   );
 }
 

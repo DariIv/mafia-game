@@ -1,8 +1,8 @@
-.modalWrapper{
+/* .modalWrapper{
   position: fixed;
   bottom:0;
   right: 1px;
-  width:100%;
+  width:30%;
   background: rgba(0,0,0, .2);
   backdrop-filter: blur(10px);
   z-index: 2;
@@ -15,14 +15,13 @@
 
 .closedModalWrapper{
   height: 0;
-  display: none
+  display: none;
 }
-git pu
+
 .modalBody{
   width: 70%;
   margin: auto;
-  /* background: rgb(131, 125, 125); */
-  background-image: url('https://cutewallpaper.org/22/russian-mafia-wallpapers/39323812.jpg');
+  background: rgb(131, 125, 125);
   margin-top: 5%;
   padding: 20px;
   border-radius: 10px;
@@ -38,4 +37,4 @@ git pu
 .modalBody {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
+} */

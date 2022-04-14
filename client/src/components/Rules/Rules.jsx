@@ -1,12 +1,12 @@
 import React from 'react';
 import { rolesData } from '../../rolesData'
 import RoleAccordion from '../RoleAccordion/RoleAccordion';
-
+import style from './Rules.module.css'
 
 function Rules(props) {
   return (
-    <>
-    <h3 className="headers-text" align='center'>Правила игры</h3>
+    <div className={style.rulesWrap}>
+    <h3>Правила игры</h3>
     <div className="accordion">
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi incidunt asperiores deserunt at consectetur, 
         officiis impedit delectus molestias, tenetur ex aliquam praesentium dolorem molestiae omnis, natus debitis in 
@@ -15,15 +15,15 @@ function Rules(props) {
         labore cum accusantium repellendus perspiciatis!</p>
     </div>
     <div>
-      <h3 className="headers-text" align='center'>Игровые роли</h3>
+      <h3>Игровые роли</h3>
       <div className="accordion">
         {rolesData.map(({ title, content }) => (
           <RoleAccordion title={title} content={content} />
           ))}
       </div>
     </div>
-    </>
-    
+   
+    </div>
   );
 }
 

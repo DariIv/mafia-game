@@ -1,10 +1,12 @@
 body {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 50, 61, 1) 100%
-  );
+  ); */
+  background-image:url('https://cdn2.unrealengine.com/Diesel%2Fbundles%2Fmafia-trilogy%2FEGS_MafiaTrilogy_Hangar13_G1A_00-1920x1080-bb8a4c86ab5c03c1759842bd9db6a22a58bf4305.jpg?h=1080&resize=1&w=1920');
   color: white;
-  font-family: "Montserrat", sans-serif;
+  
+  
 }

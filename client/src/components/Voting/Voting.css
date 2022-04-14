@@ -1,0 +1,8 @@
+.voting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+}

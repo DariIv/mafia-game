@@ -1,0 +1,45 @@
+.poll {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  
+}
+.right {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left canvas {
+  color: red;
+}
+.graph {
+  width: 500px;
+  height: 500px;
+}
+.button {
+  font-size: 17px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background-color: #eeeeee;
+  display: inline-block;
+  height: 50px;
+  width: 230px;
+  color: #3e3e3e;
+  margin: 2px;
+}
+.button:hover {
+  background-color: #888888;
+  color: rgb(255, 255, 255);
+}
+
+.options input {
+  margin: 20px;
+  background-color: red;
+}

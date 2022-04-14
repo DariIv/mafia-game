@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { socket, sendMessage } from '../../socket/socket.chat';
 import { useVote } from './Voting';
-import './component.css';
+import style from'./component.module.css';
 
 // names
 import { useDispatch } from 'react-redux';
@@ -59,11 +59,11 @@ function Options() {
   };
 
   return (
-    <div id="options">
+    <div className={style.options}>
 
       
       <label htmlFor="">
-        <input
+        <input className={style.input}
           name="option"
           type="radio"
           value={options}
@@ -77,7 +77,7 @@ function Options() {
       <br />
       <br />
       <div>
-        <button onClick={handleSubmit}>Голосовать</button>
+        <button className={style.button} onClick={handleSubmit}>Голосовать</button>
       </div>
     </div>
   );

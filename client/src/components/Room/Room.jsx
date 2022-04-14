@@ -38,7 +38,7 @@ export default function Room() {
   return (
     <>
       
-      <div className='wrapper'>
+      <div className='wrapper' style={qwer&&{backdropFilter:'blur(30px)'}}>
         <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
         <div className='videoWrapper'>
 
@@ -70,7 +70,6 @@ export default function Room() {
         </div>
         <ModalForPeople />
       </div>
-    </div>
     </>
   );
 }

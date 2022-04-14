@@ -39,16 +39,8 @@ export default function Room() {
           {clients.map((clientID, index, xz) => {
             return (
               <div className='blockVideo' key={clientID} id={clientID}>
-                {clientID === LOCAL_VIDEO ?
-                  <>
-                    <span style={{ fontSize: '15px' }}>Я: {role[index]}</span><br />
-                  </>
-                  :
-                  <>
-                    <span style={{ fontSize: '15px' }}>Игрок: anon</span><br />
-                  </>
-                }
-                <span style={{ fontSize: '15px' }}>id:{clientID} </span>
+                <span style={{fontSize:'15px'}}>Я: {role[index]}</span><br />
+                <span style={{fontSize:'15px'}}>id:{clientID} </span>
                 <video
                   className='video'
                   width='245px'

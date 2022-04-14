@@ -37,8 +37,8 @@ export default function Room() {
   const qwer = localStorage.getItem('randomRole') === 'мирный'
   return (
     <>
-      
-      <div className='wrapper' style={qwer&&{backdropFilter:'blur(30px)'}}>
+
+      <div className='wrapper' style={qwer && { backdropFilter: 'blur(30px)' }}>
         <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
         <div className='videoWrapper'>
 

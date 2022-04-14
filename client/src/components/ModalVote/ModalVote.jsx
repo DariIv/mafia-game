@@ -6,15 +6,16 @@ import Container from '../Voting/Container';
 function ModalVote({ night }) {
   return (
     <>
-      <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
-        <div className='modalBody'>
-          <Voting>
-            <Container />
-          </Voting>
+        <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
+          <div className='modalBody'>
+            <Voting>
+              <Container />
+            </Voting>
+          </div>
         </div>
-      </div>
-      );
+      
     </>
+  );
 }
 
 export default ModalVote;

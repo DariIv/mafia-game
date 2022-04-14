@@ -9,7 +9,7 @@ const options = {
 
 
 
-export const socket = io(process.env.PORT || 'http://localhost:4000', options)
+export const socket = io(process.env.PORT, options)
 
 
 // голосование

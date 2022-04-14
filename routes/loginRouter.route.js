@@ -21,13 +21,15 @@ router.route('/').post(async (req, res) => {
 
     if (pass) {
       req.session.user_data = data;
-      res.json(post(200, `Приветствую, ${data.user_name}`));
+      res.json({status:200, message: `Приветствую, ${data.user_name}`, name: data.name_user});
     } else {
-      res.json(post(400, 'Неверный пароль'));
+      res.json({status:400, message: 'Неверный пароль'});
     }
   } else {
-    res.json(post(400, 'Такой почты не существует'));
+    res.json({status:400, message: 'Такой почты не существует'});
   }
 });
+
+// ({ status: 400, message: 'Почта уже используется' });
 
 module.exports = router;

@@ -3,6 +3,7 @@ import { createContext, useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import useWebRTC from '../customHooks/useWebRTC';
 import { useParams } from 'react-router';
+import './component.module.css';
 
 
 const VoteContext = createContext();
@@ -11,14 +12,14 @@ export const Voting = ({ children }) => {
   const dispatch = useDispatch();
   const { id: roomID } = useParams();
   const { clients, provideMediaRef } = useWebRTC(roomID);
-  
+
   const [options, setOptions] = useState({});
   const [data, setData] = useState({
-    labels: [clients],
+    labels: clients,
     datasets: [
       {
         label: '# of Votes',
-        data: [0, 0, 0, 0],
+        data: options,
         backgroundColor: [
           'rgba(255, 99, 132, 0.7)',
           'rgba(54, 162, 235, 0.7)',

@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: #212121; */
+}
+
+.wrapper {
+  width: 850px;
+  height: 30px;
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 425px);
+}
+
+.moon {
+  width: 200px;
+  height: 200px;
+  background: #ccc;
+  border-radius: 360px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% + 200px);
+  z-index: 2;
+}
+
+.orbit {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  left: calc(50% - 350px);
+  border-radius: 360px;
+  transform: rotateX(75deg);
+  animation: orbit1 1s 0 linear;
+  animation-fill-mode: forwards;
+  z-index: 0;
+}
+
+@keyframes orbit1 {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotateX(75deg) rotateZ(-150deg);
+  }
+}
+
+.orbit:after {
+  /* content: '';
+  position: absolute;
+  right: 40px;
+  top: calc(50% - 200px);
+  background: #5da6e9;
+  width: 20px;
+  height: 20px;
+  border-radius: 360px; */
+}
+
+.orbit2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 100px;
+  left: calc(50% - 350px);
+  border-radius: 360px;
+  transform: rotateX(75deg);
+  animation: orbit2 0.85s 0.95s linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 0;
+}
+
+@keyframes orbit2 {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotateX(75deg) rotateZ(-185deg);
+  }
+}
+
+.orbit2:after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: calc(50% - 10px);
+  background: #5da6e9;
+  width: 20px;
+  height: 20px;
+  border-radius: 360px;
+}
+
+.orbit3 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 200px;
+  left: calc(50% - 150px);
+  border-radius: 360px;
+  transform: rotateX(75deg);
+  animation: orbit3 0.7s 1.8s linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 0;
+}
+
+@keyframes orbit3 {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotateX(75deg) rotateZ(-175deg);
+  }
+}
+
+.orbit3:after {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: calc(50% - 39px);
+  background: #5da6e9;
+  width: 20px;
+  height: 20px;
+  border-radius: 360px;
+}
+
+.orbit4 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 275px;
+  left: calc(50% - 150px);
+  border-radius: 360px;
+  transform: rotateX(75deg);
+  animation: orbit3 0.4s 2.5s linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 3;
+}
+
+@keyframes orbit3 {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotateX(75deg) rotateZ(-165deg);
+  }
+}
+
+.orbit4:after {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: calc(50% - 4px);
+  background: #5da6e9;
+  width: 20px;
+  height: 20px;
+  border-radius: 360px;
+}
+
+.goodbye {
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 500px);
+  font-family: "Press Start 2P", Helvetica, Arial;
+  font-size: 70px;
+  color: #fff;
+  text-align: center;
+  width: 1000px;
+  opacity: 0;
+  animation: goodbye 0.4s 2.9s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes goodbye {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

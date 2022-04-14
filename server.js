@@ -20,7 +20,7 @@ const io = new Server(httpServer, {
   cors: { origin: '*' },
   credentials: true,
 });
-// app.use(cors({ origin: ['http://localhost:3000', 'https://mafia-test-all.herokuapp.com/'], credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 const ACTIONS = require('./client/src/socket/actions');
 
 app.get('/', (req, res) => { });
@@ -46,10 +46,8 @@ io.on('connection', (socket) => {
   console.log('Socket connected');
 });
 
-// имена захардкожено
-const votes = {
-  clientID: 0
-};
+// имена
+const votes = { };
 
 // Комнаты в которых будут клиенты
 
@@ -69,17 +67,21 @@ function shareRoomsInfo() {
 
 // описание присоединения к комнатам
 io.on('connection', (socket) => {
-  // голосование
-  socket.emit('new-vote', votes);
+
+  shareRoomsInfo();
+  
+    // голосование
+  // socket.emit('new-vote', votes);
 
   socket.on('new-vote', vote => {
     console.log('New Vote:', vote);
-    votes[vote] += 1;
+    votes[vote] ? votes[vote] += 1 : votes[vote] = 1;
     io.emit('new-vote', votes);
   });
 // голосование
 
-  shareRoomsInfo();
+
+
 
   socket.on(ACTIONS.JOIN, (config) => {
 
@@ -202,7 +204,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 // app.listen(PORT, () => {
-httpServer.listen(PORT, () => {
+httpServer.listen(process.env.PORT, () => {
   console.log(`*** Working at PORT: ${PORT} ***`);
 });
 // });

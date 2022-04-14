@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { socket, sendMessage } from '../../socket/socket.chat';
 import { useVote } from './Voting';
-import './component.css';
+import './component.module.css';
 
 // names
 import { useDispatch } from 'react-redux';
@@ -24,13 +24,11 @@ function Options() {
   };
   useEffect(() => {
     setData({
-      labels: [clients],
+      labels: clients,
       datasets: [
         {
           label: '# of Votes',
-          data: [
-            options[clients],
-          ],
+          data: Object.values(options),
           backgroundColor: [
             'rgba(255, 99, 132, 0.7)',
             'rgba(54, 162, 235, 0.7)',
@@ -60,20 +58,23 @@ function Options() {
 
   return (
     <div id="options">
-
-      
+    
+      {clients.map ((clients, options) => {
+        return (
       <label htmlFor="">
         <input
+        key={options}
           name="option"
           type="radio"
           value={options}
           onChange={handleSelect}
-          checked={selectedOption === clients}
+          // checked={selectedOption === options}
         />
         {clients}({getPercent(clients)} %)
       </label>
-
-
+      )
+     })
+}
       <br />
       <br />
       <div>

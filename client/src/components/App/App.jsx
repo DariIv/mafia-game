@@ -14,6 +14,8 @@ import Room from '../Room/Room';
 
 // import Chat from "../Chat/Chat";
 import Error404 from '../Error404/Error404'
+import Profile from "../Profile/Profile";
+import Logout from "../Logout/Logout";
 
 
 function App(props) {
@@ -26,9 +28,15 @@ function App(props) {
         <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/rules" element={<Rules />} /> 
-         <Route path="*" element={<Error404 />} /> 
+
          <Route path="/registration" element={<Registration />} />
+         <Route path="/logout" element={<Logout />} />
+         <Route path="*" element={<Error404 />} /> 
+
          <Route path="/room/:id" element={<Room />} />
+         <Route path="/profile" element={<Profile />} />
+
+
          {/* <Route path="/video" element={<Main />} /> */}
 
         </Routes>

@@ -24,7 +24,7 @@ router.route('/').post(async (req, res) => {
   const regexpEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const email = regexpEmail.test(user_email);
 
-  // Валдиация пароля
+  // Валидация пароля
   const regexpPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}/g;
   const password = regexpPassword.test(user_password);
 
@@ -47,7 +47,7 @@ router.route('/').post(async (req, res) => {
     });
 
     req.session.user_data = dataOne;
-    res.json({ status: 200, message: `Приветствую, ${user_name}` });
+    res.json({ status: 200, message: `Приветствую, ${user_name}`, name: user_name});
   }
 });
 

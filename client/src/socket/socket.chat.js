@@ -7,4 +7,27 @@ const options = {
   transports : ["websocket"]
 }
 
-export const socket = io(process.env.PORT || 'http://localhost:4000/', options)
+
+
+export const socket = io(process.env.PORT || 'http://localhost:4000', options)
+
+
+// голосование
+
+export const sendMessage = (topic, data) => {
+  if (!socket) {
+    return false;
+  }
+
+  socket.emit(topic, data);
+};
+
+export const subscribeToNewMessages = (cb) => {
+  if (!socket) {
+    return false;
+  }
+
+  socket.on('new-vote', (message) => {
+    cb(message);
+  });
+};

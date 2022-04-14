@@ -1,81 +1,48 @@
-import "./Voting.css";
-import { LeafPoll, Result } from "react-leaf-polls";
-import "react-leaf-polls/dist/index.css";
-import { useEffect, useState } from "react";
-import { socket } from "../../socket/socket.chat";
+import { createContext, useState, useContext } from 'react';
+// names
+import { useDispatch } from 'react-redux';
+import useWebRTC from '../customHooks/useWebRTC';
+import { useParams } from 'react-router';
 
 
-export default function Voting() {
+const VoteContext = createContext();
 
-
-  // useEffect(()=>{
-    
-  // },[])
-
-  const makeVote = () => {
-    socket.emit('killerVote', 'kill')
-    socket.on('killerVote', (msg) => {
-    console.log(msg);
-    const newData = [...result];
-    newData[0].votes++;
-    setResult(newData);
-    console.log(result);
-    })
-  }
-
-
-
-  // Persistent data array (typically fetched from the server)
-  const resData = [
-    { text: "Вася", votes: 0 },
-    { text: "Петя", votes: 0 },
-    { text: "Маша", votes: 0 }
-  ];
-
-  // Object keys may vary on the poll type (see the 'Theme options' table below)
-  const customTheme = {
-    textColor: "black",
-    mainColor: "#00B87B",
-    backgroundColor: "rgb(255,255,255)",
-    alignment: "center"
+export const Voting = ({ children }) => {
+  const dispatch = useDispatch();
+  const { id: roomID } = useParams();
+  const { clients, provideMediaRef } = useWebRTC(roomID);
+  
+  const [options, setOptions] = useState({});
+  const [data, setData] = useState({
+    labels: [clients],
+    datasets: [
+      {
+        label: '# of Votes',
+        data: [0, 0, 0, 0],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.7)',
+          'rgba(54, 162, 235, 0.7)',
+          'rgba(255, 206, 86, 0.7)',
+          'rgba(75, 192, 192, 0.7)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  });
+  const values = {
+    options,
+    setOptions,
+    data,
+    setData,
   };
 
-  function vote(item, results) {
-    // Here you probably want to manage
-    // and return the modified data to the server.
-    socket.emit('killerVote', 'kill')
-    socket.on('killerVote', (msg) => {
-    console.log(msg)
-    const newData = [...result];
-    newData[0].votes++;
-    setResult(newData);
-    console.log(result);
-  })}
+  return <VoteContext.Provider value={values}>{children}</VoteContext.Provider>;
+};
 
-
-  const [result, setResult] = useState(resData);
-
-  useEffect(() => {
-    console.log(result);
-  }, [result]);
-
-  const addVote = () => {
-    const newData = [...result];
-    newData[0].votes++;
-    setResult(newData);
-    console.log(result);
-  };
-
-  return (
-    <div className="voting">
-      <LeafPoll
-        type="multiple"
-        question="Кого будем убивать?"
-        results={result}
-        theme={customTheme}
-        onVote={vote}
-      />
-      <button onClick={makeVote} type="button" className="btn btn-dark">Убить</button>
-    </div>
-  );
-}
+export const useVote = () => useContext(VoteContext);

@@ -44,9 +44,9 @@ function Registration(props) {
       user_email: emailValue.current.value,
       user_password: passwordValue.current.value
     }
-    console.log(loginValue, emailValue, passwordValue);
-
+    // console.log('qwe');
     fetch('http://localhost:4000/registration', {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'Application/json' },
       body: JSON.stringify(newUser)

@@ -50,6 +50,11 @@ io.on('connection', (socket) => {
   console.log('Socket connected');
 });
 
+// имена захардкожено
+const votes = {
+  clientID: 0
+};
+
 // Комнаты в которых будут клиенты
 
 function getClientRooms() {
@@ -68,6 +73,16 @@ function shareRoomsInfo() {
 
 // описание присоединения к комнатам
 io.on('connection', (socket) => {
+  // голосование
+  socket.emit('new-vote', votes);
+
+  socket.on('new-vote', vote => {
+    console.log('New Vote:', vote);
+    votes[vote] += 1;
+    io.emit('new-vote', votes);
+  });
+// голосование
+
   shareRoomsInfo();
    
   //для таймера
@@ -81,6 +96,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on(ACTIONS.JOIN, (config) => {
+
     const { room: roomID } = config; // рум айди
     const { rooms: joinedRooms } = socket; // все комнаты которые есть чтобы не подключиться к ним повторно(в которых уже есть сокет)
 
@@ -171,26 +187,26 @@ app.use((req, res, next) => {
 // Сокеты, юзер в комнате
 const socketStore = {};
 
-io.on('connection', (socket) => {
-  // подключить юзера в комнату
-  socket.on('join', async ({
-    roomHash, userId, roomId, roleId, creator, isAlive, socketId,
-  }) => {
-    const userInSocketRoom = getUsersInRoomSocket(io, roomHash);
-    const maxUsersInRoom = await getMaxUsers(roomId);
-    if (userInSocketRoom < maxUsersInRoom) {
-      socket.join(roomHash);
+// io.on('connection', (socket) => {
+//   подключить юзера в комнату
+//   socket.on('join', async ({
+//     roomHash, userId, roomId, roleId, creator, isAlive, socketId,
+//   }) => {
+//     const userInSocketRoom = getUsersInRoomSocket(io, roomHash);
+//     const maxUsersInRoom = await getMaxUsers(roomId);
+//     if (userInSocketRoom < maxUsersInRoom) {
+//       socket.join(roomHash);
 
-      const usersInRoom = await addUserInRoom(userId, roomId, roleId, сreator, isAlive, socket.id);
-      socketStore[roomHash] = {};
-      socketStore[roomHash].users = usersInRoom;
+//       const usersInRoom = await addUserInRoom(userId, roomId, roleId, сreator, isAlive, socket.id);
+//       socketStore[roomHash] = {};
+//       socketStore[roomHash].users = usersInRoom;
 
-      io.to(roomHash).emit('currentUsers', usersInRoom);
-    } else {
-      io.to(socket.id).emit('roomFull');
-    }
-  });
-});
+//       io.to(roomHash).emit('currentUsers', usersInRoom);
+//     } else {
+//       io.to(socket.id).emit('roomFull');
+//     }
+//   });
+// });
 
 // убрать юзера из комнаты
 // нужен сокет для запуска игры, роли, сокет для состояний игры(чтобы появлялись день и ночь)

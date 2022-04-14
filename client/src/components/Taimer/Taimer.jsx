@@ -142,7 +142,9 @@ function Taimer(props) {
           </div>
         )}
       </div>
+      {localStorage.getItem('randomRole') === 'мирный' &&
       <ModalVote night={night} />
+        }
     </>
   );
 }

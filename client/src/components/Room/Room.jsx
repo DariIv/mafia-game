@@ -30,7 +30,11 @@ export default function Room() {
   //   role[i] = el
   // }
   // console.log(role);
-  if (localStorage.getItem('randomRole') === 'мирный') const qwer = { filter: 'blur(30px)' }
+  if (localStorage.getItem('randomRole') === 'мирный'){
+    let atr = document.querySelector('video')
+    atr.style.cssText += 'filter:blur(30px)'
+  }
+
   return (
     <>
 
@@ -43,7 +47,6 @@ export default function Room() {
               <div className='blockVideo' key={clientID} id={clientID}>
                 <span style={{ fontSize: '15px' }}>id:{clientID} </span>
                 <video
-                  style={qwer}
                   className='video'
                   width='245px'
                   height='140px'

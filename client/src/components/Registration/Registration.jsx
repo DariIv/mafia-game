@@ -109,7 +109,8 @@ function Registration(props) {
           console.log('привет лог');
           localStorage.setItem('user_name', data.name)
           setTimeout(() => {
-            navigate('/profile')
+            window.location.href = '/'
+            // navigate('/profile')
           }, 1000)
         }
       })

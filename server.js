@@ -33,8 +33,10 @@ io.on('connection', (socket) => {
   console.log(socket.id);
   console.log(socket.handshake.session);
   socket.on('chat message', (msg) => {
+    if(socket.handshake.session.user_data.user_name){
     let chatName = socket.handshake.session.user_data.user_name
     io.emit('chat message', msg, chatName);
+  }
   });
 });
 

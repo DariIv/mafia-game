@@ -1,74 +1,81 @@
-// import Chart from 'chart.js/auto';
-// import { getRelativePosition } from 'chart.js/helpers';
+import "./Voting.css";
+import { LeafPoll, Result } from "react-leaf-polls";
+import "react-leaf-polls/dist/index.css";
+import { useEffect, useState } from "react";
+import { socket } from "../../socket/socket.chat";
 
 
-import { socket } from '../../socket/socket.chat';
-import React, { useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { Chart } from 'chart.js'
+export default function Voting() {
 
 
-function Voting(props) {
+  // useEffect(()=>{
+    
+  // },[])
 
-  const { mess } = useSelector(state => state.messReducer)
-  console.log(mess);
-
-  const ctx = useRef()
-
-  const chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["Candidates"],
-    },
-    options: {
-    }
-  });
-
-
-  // On new vote update the chart
-  socket.on("update", (candidates) => {
-
-    // Convert the candidates object into an array
-    candidates = Object.entries(candidates);
-
-    // For each candidate
-    for (const [key, candidate] of candidates) {
-
-      // Update the vote if the candidate already exists if not create a new candidate and then update the vote
-      if (typeof chart.data.datasets[key] == "undefined" && chart.data.datasets.length < candidates.length) {
-        chart.data.datasets.push({
-          backgroundColor: candidate.color,
-          borderColor: candidate.color,
-          data: [candidate.votes],
-          label: candidate.label
-        });
-      } else if (typeof chart.data.datasets[key] != "undefined") {
-        chart.data.datasets[key].data = [candidate.votes];
-      }
-    }
-
-    // Update the chart
-    chart.update();
-  });
-
-
-  function vote(index) {
-    socket.emit("vote", index);
+  const makeVote = () => {
+    socket.emit('killerVote', 'kill')
+    socket.on('killerVote', (msg) => {
+    console.log(msg);
+    const newData = [...result];
+    newData[0].votes++;
+    setResult(newData);
+    console.log(result);
+    })
   }
 
-  return (
-    <>
-      <div>
-        <canvas ref={ctx}></canvas>
-      </div>
 
-      <button onclick={vote(0)}>JavaScript</button>
-      <button onclick={vote(1)}>C#</button>
-      <button onclick={vote(2)}>PHP</button>
-      <button onclick={vote(3)}>Python</button>
-      <button onclick={vote(4)}>Go</button>
-    </>
+
+  // Persistent data array (typically fetched from the server)
+  const resData = [
+    { text: "Вася", votes: 0 },
+    { text: "Петя", votes: 0 },
+    { text: "Маша", votes: 0 }
+  ];
+
+  // Object keys may vary on the poll type (see the 'Theme options' table below)
+  const customTheme = {
+    textColor: "black",
+    mainColor: "#00B87B",
+    backgroundColor: "rgb(255,255,255)",
+    alignment: "center"
+  };
+
+  function vote(item, results) {
+    // Here you probably want to manage
+    // and return the modified data to the server.
+    socket.emit('killerVote', 'kill')
+    socket.on('killerVote', (msg) => {
+    console.log(msg)
+    const newData = [...result];
+    newData[0].votes++;
+    setResult(newData);
+    console.log(result);
+  })}
+
+
+  const [result, setResult] = useState(resData);
+
+  useEffect(() => {
+    console.log(result);
+  }, [result]);
+
+  const addVote = () => {
+    const newData = [...result];
+    newData[0].votes++;
+    setResult(newData);
+    console.log(result);
+  };
+
+  return (
+    <div className="voting">
+      <LeafPoll
+        type="multiple"
+        question="Кого будем убивать?"
+        results={result}
+        theme={customTheme}
+        onVote={vote}
+      />
+      <button onClick={makeVote} type="button" className="btn btn-dark">Убить</button>
+    </div>
   );
 }
-
-export default Voting;

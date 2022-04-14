@@ -1,8 +1,8 @@
 import React from 'react';
-import './ModalVote.css'
+import './ModalForPeople.css'
 import Voting from '../Voting/Voting';
 
-function ModalVote({night}) {
+function ModalForPeople({night}) {
   return (
     <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
       <div className='modalBody'>
@@ -12,4 +12,4 @@ function ModalVote({night}) {
   );
 }
 
-export default ModalVote;
+export default ModalForPeople;

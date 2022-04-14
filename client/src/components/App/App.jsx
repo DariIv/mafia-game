@@ -30,7 +30,6 @@ function App(props) {
          <Route path="/registration" element={<Registration />} />
          <Route path="/room/:id" element={<Room />} />
          {/* <Route path="/video" element={<Main />} /> */}
-
         </Routes>
 
         <Footer />

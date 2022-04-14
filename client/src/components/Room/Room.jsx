@@ -34,11 +34,11 @@ export default function Room() {
   //   let atr = document.querySelector('.video')
   //   atr.style.cssText += 'filter:blur(30px)'
   // }
-
+  const qwer = localStorage.getItem('randomRole') === 'мирный'
   return (
     <>
-
-      <div className='wrapper'>
+      
+      <div className='wrapper' style={qwer?{backdropFilter: 'blur(30px)'}:{}}>
         <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
         <div className='videoWrapper'>
 
@@ -47,7 +47,6 @@ export default function Room() {
               <div className='blockVideo' key={clientID} id={clientID}>
                 <span style={{ fontSize: '15px' }}>id:{clientID} </span>
                 <video
-                  style={localStorage.getItem('randomRole') === 'мирный' && { filter: 'blur(30px)' }}
                   className='video'
                   width='245px'
                   height='140px'
@@ -71,6 +70,7 @@ export default function Room() {
         </div>
         <ModalForPeople />
       </div>
+    </div>
     </>
   );
 }

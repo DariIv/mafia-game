@@ -21,41 +21,40 @@ export default function Room() {
   const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
   const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] })
   // const { nick } = useSelector(state => state.nickReducer)
-  
+
   return (
     <>
 
-    <div className='wrapper'>
-     <div className='videoWrapper'>
+      <div className='wrapper'>
+        <div className='videoWrapper'>
 
-        {clients.map((clientID, users, xz) => {
-          return (
-            <div className='blockVideo' key={clientID} id={clientID}>
-              <span> xz[users] </span>
-              <video
-                className='video'
-                width='245px'
-                height='140px'
-                ref={instance => {
-                  provideMediaRef(clientID, instance);
-                }}
-                autoPlay
-                playsInline
-                muted={clientID === LOCAL_VIDEO}
-              />
-             {randomName}
-            </div>
-            
-          );
-        })}
-        
-      </div>
+          {clients.map((clientID, users, xz) => {
+            return (
+              <div className='blockVideo' key={clientID} id={clientID}>
+                <span> {clientID} </span>
+                <video
+                  className='video'
+                  width='245px'
+                  height='140px'
+                  ref={instance => {
+                    provideMediaRef(clientID, instance);
+                  }}
+                  autoPlay
+                  playsInline
+                  muted={clientID === LOCAL_VIDEO}
+                />
+              </div>
 
-      <TaimerStart />
-      <div>
-       <Chat />
-      </div>
-       <ModalForPeople />
+            );
+          })}
+
+        </div>
+
+        <TaimerStart />
+        <div>
+          <Chat />
+        </div>
+        <ModalForPeople />
       </div>
     </>
   );

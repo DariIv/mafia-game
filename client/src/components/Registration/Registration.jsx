@@ -55,8 +55,8 @@ function Registration(props) {
 
       .then(data => {
         console.log(data);
+        // console.log(data);
         if (data.status === 400) {
-          console.log(message.status);
           setMessage(data.message)
           setErrCheck(true)
         }
@@ -64,11 +64,12 @@ function Registration(props) {
           setMessage(data.message)
           setErrCheck(false)
           setSucCheck(true)
-          console.log('привет рег');
-          dispatch(addUserAc(data));
-          localStorage.setItem('user_name', data.name)
+          // console.log('привет рег');
+          // dispatch(addUserAc(data));
+          // localStorage.setItem('user_name', data.name)
           setTimeout(() => {
-            navigate('/profile')
+            window.location.href = 'http://localhost:4000/'
+            // navigate('/profile')
           }, 1000)
         }
       })

@@ -16,7 +16,7 @@ const sessionRouter = require('./routes/sessionRouter.route');
 
 const { Game, Room, UserInRooms } = require('./db/models');
 
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cors({ origin: 'http://localhost:4000', credentials: true }));
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: { origin: '*' },
@@ -33,8 +33,8 @@ io.on('connection', (socket) => {
   console.log(socket.id);
   console.log(socket.handshake.session);
   socket.on('chat message', (msg) => {
-    console.log(msg);
-    io.emit('chat message', msg);
+    let chatName = socket.handshake.session.user_data.user_name
+    io.emit('chat message', msg, chatName);
   });
 });
 

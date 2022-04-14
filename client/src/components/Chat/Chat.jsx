@@ -24,8 +24,8 @@ function Chat(props) {
 
   useEffect(() => {
 
-    socket.on('chat message', (msg) => {
-      dispatch(addMessAC(msg))
+    socket.on('chat message', (msg, chatName) => {
+      dispatch(addMessAC({msg, chatName}))
       scroll.current.scrollIntoView(
         {
           behavior: 'smooth',
@@ -33,8 +33,7 @@ function Chat(props) {
     });
   }, [dispatch])
   //hard user
-
-  const user = 'Vottema:'
+  console.log(mess);
   return (
     <>
       <div className='chatWrap'>
@@ -43,7 +42,7 @@ function Chat(props) {
           </div>
           <div className="messages">
             <div className="messages-content mess">
-              {mess.length ? mess.map((el, index) => <div ref={scroll} className='message message-personal' key={index}><span style={{ color: 'black', zoom: '1.5' }}>{user}</span><br />{el}</div>) : ''}
+              {mess.length ? mess.map((el, index) => <div ref={scroll} className='message message-personal' key={index}><span style={{ color: 'black', zoom: '1.5' }}>{el.chatName}</span><br />{el.msg}</div>) : ''}
             </div>
           </div>
           <form onSubmit={addMess}>

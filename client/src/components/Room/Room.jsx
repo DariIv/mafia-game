@@ -14,13 +14,21 @@ let randomProfile = require('random-profile-generator');
 
 
 export default function Room() {
-  // const dispatch = useDispatch()
+
   const { id: roomID } = useParams();
   const { clients, provideMediaRef } = useWebRTC(roomID);
-  let profile = randomProfile.profile()
-  const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
-  const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] })
-  // const { nick } = useSelector(state => state.nickReducer)
+  let role = ['мирный', 'мафия', 'мирный', 'мирный'];
+  // let num ;
+  // let el ;
+
+  // for (let i = role.length - 1; i > 0; i--) {
+  //   num = Math.floor(Math.random() * (i + 1))
+  //   el = role[num]
+  //   role[num] = role[i]
+  //   role[i] = el
+  // }
+  // console.log(role);
+
 
   return (
     <>
@@ -28,10 +36,11 @@ export default function Room() {
       <div className='wrapper'>
         <div className='videoWrapper'>
 
-          {clients.map((clientID, users, xz) => {
+          {clients.map((clientID, index, xz) => {
             return (
               <div className='blockVideo' key={clientID} id={clientID}>
-                <span> {clientID} </span>
+                <span style={{fontSize:'15px'}}>Я: {role[index]}</span><br />
+                <span style={{fontSize:'15px'}}>id:{clientID} </span>
                 <video
                   className='video'
                   width='245px'

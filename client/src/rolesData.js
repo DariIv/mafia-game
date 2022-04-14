@@ -1,42 +1,22 @@
 export const rolesData = [
   {
     title: 'Мирный житель',
-    content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-    laborum cupiditate possimus labore, hic temporibus velit dicta earum
-    suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-    voluptatem.`
+    content: `Мирный гражданин - самая распространенная роль в игровой партии и самая простая. Главная задача граждан - казнить всех мафиози и спасти город. Ночью мирные жители спят, а утром голосуют против игроков, которых подозревают в причастности к мафиозному клану. Кто будет предан казни, решает большинство голосов, поэтому очень важно отдать свой голос против настоящего мафиози..`
   },
   {
     title: 'Мафия',
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-    reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-    quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-    pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-    quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-    Repudiandae, mollitia id reprehenderit a ab odit!`
+    content: `Роль мафиози представляет тёмную сторону игрового противостояния. В каждой партии несколько игроков с такой ролью (обычно от 2 до 4). Мафии, чтобы победить, предстоит постепенно убивать каждую ночь одного из мирных граждан, чтобы захватить город. Не забывайте, что мафии следует опасаться Комиссара, который может узнать их роль, и маньяка.`
   },
   {
     title: 'Доктор',
-    content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-    quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-    dolor ut sequi minus iste? Quas?`
+    content: `Доктор каждую ночь может посетить одного игрока и спасти его жизнь в случае попытки его убийства мафией или маньяком. Доктор, как и все активные роли, не может "выходить" ночью к себе.`
   },
   {
     title: 'Любовница',
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-    reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-    quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-    pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-    quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-    Repudiandae, mollitia id reprehenderit a ab odit!`
+    content: `Ночью просыпается два раза: первый — в составе мафии, чтобы выбрать жертву; второй — отдельно, чтобы кого-то «заблокировать». Любовница наугад показывает на одного из игроков, и, если у того есть активная роль (например, доктор, маньяк, журналист), этой ночью он не сможет ее выполнять. Доктор не сможет лечить, маньяк — стрелять, журналист — устраивать проверки. Главная цель любовницы — попасть в комиссара, доктора или другого представителя красного лагеря, чтобы подорвать их активность против мафии. Также, как и доктор, любовница не может указывать на одного и того же игрока две ночи подряд.`
   },
   {
     title: 'Маньяк',
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-    reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-    quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-    pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-    quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-    Repudiandae, mollitia id reprehenderit a ab odit!`
+    content: `Его цель — остаться один на один с мирным жителем. Маньяк просыпается ночью и выбирает жертву. Ею может оказаться любой персонаж: мирный житель, мафия или другой представитель серого лагеря. У маньяка есть две особенности: его жертву не может вылечить доктор, и, если маньяка проверяет комиссар, ведущий отвечает ему, что это мирный житель.`
   },
 ];

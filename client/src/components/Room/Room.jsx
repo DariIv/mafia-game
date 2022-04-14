@@ -21,41 +21,42 @@ export default function Room() {
   const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
   const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] })
   // const { nick } = useSelector(state => state.nickReducer)
-  
+
   return (
     <>
 
-    <div className={style.wrapper}>
-     <div className={style.videoWrapper}>
+      <div className={style.wrapper}>
+        <div className={style.videoWrapper}>
 
-        {clients.map((clientID, users, xz) => {
-          return (
-            <div className={style.blockVideo} key={clientID} id={clientID}>
-              <span> xz[users] </span>
-              <video
-                className={style.video}
-                width='320px'
-                height='200px'
-                ref={instance => {
-                  provideMediaRef(clientID, instance);
-                }}
-                autoPlay
-                playsInline
-                muted={clientID === LOCAL_VIDEO}
-              />
-             {randomName}
-            </div>
-            
-          );
-        })}
-        
-      </div>
+          {clients.map((clientID, users, xz) => {
+            return (
+              <div className={style.blockVideo} key={clientID} id={clientID}>
+                <span> xz[users] </span>
+                <video
+                  className={style.video}
+                  width='400px'
+                  height='240px'
+                  ref={instance => {
+                    provideMediaRef(clientID, instance);
+                  }}
+                  autoPlay
+                  playsInline
+                  muted={clientID === LOCAL_VIDEO}
+                />
+                {randomName}
+              </div>
 
-      <TaimerStart />
-      <div>
-       <Chat />
-      </div>
-       <ModalForPeople />
+            );
+          })}
+
+        </div>
+        <div className={style.startGameButton}>
+          <TaimerStart />
+        </div>
+        <div>
+          <Chat />
+        </div>
+        <ModalForPeople />
       </div>
     </>
   );

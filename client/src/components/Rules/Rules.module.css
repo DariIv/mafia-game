@@ -5,4 +5,15 @@
   justify-content: center;
   background-color: rgb(146, 146, 146);
   background-image: url('https://werenotsorry.files.wordpress.com/2014/10/godfather-2.jpg');
+  width: 100vw;
+  height: 100vh;
+}
+
+.rulesBlocksWrap{
+  display: flex;
+}
+
+.rolesAccordion{
+  padding-top: 30px;
+  padding-left: 80px;
 }

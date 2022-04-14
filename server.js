@@ -16,7 +16,7 @@ const sessionRouter = require('./routes/sessionRouter.route');
 
 const { Game, Room, UserInRooms } = require('./db/models');
 
-app.use(cors({ origin: 'http://localhost:4000', credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: { origin: '*' },

@@ -18,7 +18,7 @@ export default function Room() {
   const { id: roomID } = useParams();
   const { clients, provideMediaRef } = useWebRTC(roomID);
   let role = ['мирный', 'мафия', 'мирный', 'мирный'];
-  let randomRole = role[Math.floor(Math.random()* 3)]
+  let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
   // let num ;
   // let el ;
@@ -36,12 +36,12 @@ export default function Room() {
     <>
 
       <div className='wrapper'>
+        <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
         <div className='videoWrapper'>
 
           {clients.map((clientID, index, xz) => {
             return (
               <div className='blockVideo' key={clientID} id={clientID}>
-                <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
                 <span style={{ fontSize: '15px' }}>id:{clientID} </span>
                 <video
                   className='video'

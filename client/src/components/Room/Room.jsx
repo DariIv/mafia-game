@@ -31,8 +31,8 @@ export default function Room() {
   // }
   // console.log(role);
   if (localStorage.getItem('randomRole') === 'мирный'){
-    let atr = document.querySelector('video')
-    atr.style.cssText += {filter: 'blur(30px)'}
+    let atr = document.querySelector('.video')
+    atr.style.cssText += 'filter:blur(30px)'
   }
 
   return (

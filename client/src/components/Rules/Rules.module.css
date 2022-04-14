@@ -11,9 +11,20 @@
 
 .rulesBlocksWrap{
   display: flex;
+  justify-content: center
 }
 
 .rolesAccordion{
   padding-top: 30px;
   padding-left: 80px;
+}
+
+.zagolowki{
+  color: rgb(163, 54, 54);
+}
+
+.rulesListWrap{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }

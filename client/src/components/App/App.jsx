@@ -6,7 +6,6 @@ import style from './App.module.css'
 
 import Navigation from "../Navigation/Navigation";
 import Registration from "../Registration/Registration";
-import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules"
 import Home from '../Home/Home';
 import Room from '../Room/Room';

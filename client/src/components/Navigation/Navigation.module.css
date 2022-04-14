@@ -4,8 +4,9 @@
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  color: rgb(59, 59, 59);
+  color: rgb(66, 66, 66);
   background-color: rgb(31, 31, 31);
+  border: solid rgb(24, 24, 24); 
   
 }
 
@@ -18,7 +19,7 @@
 }
 
 .links:hover{
-  color: rgb(194, 63, 58);
+  color: rgb(218, 34, 28);
   transition: all 500ms ease;
 }
 
@@ -26,8 +27,8 @@
   padding-left: 40px;
   padding-right: 40px;
   margin: 15px;
-  color: brown;
-  font-size: 27px;
+  color: rgb(187, 37, 37);
+  font-size: 36px;
   font-weight: 20px;
   text-decoration: none;
 }

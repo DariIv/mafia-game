@@ -21,7 +21,7 @@ body {
 .section-title {
   font-size: 32px;
   letter-spacing: 1px;
-  color: #fff;
+  color: rgb(41, 26, 26);
 }
 
 .forms {
@@ -76,12 +76,16 @@ body {
 }
 
 .form-wrapper.is-active .switcher-login {
-  color: #fff;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(230, 0, 0);
   transform: translateX(90px);
 }
 
 .form-wrapper.is-active .switcher-signup {
-  color: #fff;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(230, 0, 0);
   transform: translateX(-90px);
 }
 
@@ -138,7 +142,7 @@ body {
 
 @keyframes showLogin {
   0% {
-    background: #d7e7f1;
+    background: #f1d7d7;
     transform: translate(40%, 10px);
   }
   50% {
@@ -292,3 +296,7 @@ body {
   align-items: center;
 }
 
+.regWrap{
+  background-image: url('https://images.alphacoders.com/797/thumb-1920-797067.jpg');
+  height: 100vh;
+}

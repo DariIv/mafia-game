@@ -74,7 +74,7 @@ function Registration(props) {
       user_password: valuePassword.current.value
     }
     
-    fetch('http://localhost:4000/login', {
+    fetch('/login', {
       method: 'POST',
       headers: { 'Content-Type': 'Application/json' },
       body: JSON.stringify(userChek)
@@ -129,7 +129,7 @@ function Registration(props) {
   }
 
   return (
-
+   <div className='regWrap'>
     <section className="forms-section" >
       <div>
       <div className="forms">
@@ -180,6 +180,7 @@ function Registration(props) {
       </div>
       </div>
     </section>
+    </div>
   );
 }
 

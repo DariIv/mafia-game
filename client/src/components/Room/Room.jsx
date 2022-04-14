@@ -34,8 +34,8 @@ export default function Room() {
                 <span> xz[users] </span>
                 <video
                   className={style.video}
-                  width='400px'
-                  height='240px'
+                  width='320px'
+                  height='200px'
                   ref={instance => {
                     provideMediaRef(clientID, instance);
                   }}
@@ -48,10 +48,9 @@ export default function Room() {
 
             );
           })}
-
         </div>
-        <div className={style.startGameButton}>
           <TaimerStart />
+        <div className={style.startGameButton}>
         </div>
         <div>
           <Chat />

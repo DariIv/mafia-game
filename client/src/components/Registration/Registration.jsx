@@ -45,7 +45,7 @@ function Registration(props) {
       user_password: passwordValue.current.value
     }
     // console.log('qwe');
-    fetch('http://localhost:4000/registration', {
+    fetch('/registration', {
       credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'Application/json' },
@@ -68,7 +68,7 @@ function Registration(props) {
           // dispatch(addUserAc(data));
           // localStorage.setItem('user_name', data.name)
           setTimeout(() => {
-            window.location.href = 'http://localhost:4000/'
+            window.location.href = '/'
             // navigate('/profile')
           }, 1000)
         }
@@ -87,7 +87,7 @@ function Registration(props) {
       user_password: valuePassword.current.value
     }
     
-    fetch('http://localhost:4000/login', {
+    fetch('/login', {
       method: 'POST',
       headers: { 'Content-Type': 'Application/json' },
       body: JSON.stringify(userChek)

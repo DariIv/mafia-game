@@ -1,12 +1,10 @@
 import { useParams } from 'react-router';
 import style from './Room.module.css';
 import useWebRTC, { LOCAL_VIDEO } from '../customHooks/useWebRTC';
-
-
-// import { useEffect, useLayoutEffect, useState } from 'react';
-// import { socket } from '../../socket/socket.chat';
-// import { useDispatch } from 'react-redux';
-// import { addNickAC } from '../../redux/actionCreators/chatAC';
+import TaimerStart from '../TaimerStart/TaimerStart'
+import ModalForPeople from '../ModalForPeople/ModalForPeople';
+import Role from '../Role/Role'
+import Chat from '../Chat/Chat';
 
 export default function Room() {
 
@@ -16,19 +14,18 @@ export default function Room() {
   let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
 
-
   return (
     <>
 
-      <div className='wrapper'>
-        <div className='videoWrapper'>
+      <div className={style.wrapper}>
+        <div className={style.videoWrapper}>
 
           {clients.map((clientID, users, xz) => {
             return (
-              <div className='blockVideo' key={clientID} id={clientID}>
+              <div className={style.blockVideo} key={clientID} id={clientID}>
                 <span style={{ fontSize: '20px' }}> Name:{clientID.slice(0, 4)} </span>
                 <video
-                  className='video'
+                  className={style.video}
                   width='320px'
                   height='200px'
                   ref={instance => {
@@ -44,7 +41,7 @@ export default function Room() {
             );
           })}
         </div>
-        <div className='startGameButton'>
+        <div className={style.startGameButton}>
           <TaimerStart />
           <div>
             <Role />

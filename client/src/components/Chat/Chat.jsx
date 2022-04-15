@@ -47,8 +47,8 @@ function Chat(props) {
           </div>
           <form onSubmit={addMess}>
             <div className="message-box">
-              <textarea ref={inputValue} type="text" className="message-input" placeholder="Type message..."></textarea>
-              <button type="submit" className="message-submit">Send</button>
+              <textarea ref={inputValue} type="text" className="message-input" placeholder="Напишите сообщение..."></textarea>
+              <button type="submit" className="message-submit">ОТПРАВИТЬ</button>
             </div>
           </form>
         </div>

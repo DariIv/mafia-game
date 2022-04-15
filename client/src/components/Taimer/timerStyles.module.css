@@ -5,9 +5,9 @@ h1 {
 }
 
 .timerWrapper {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+  position: absolute;
+  top: 130px;
+  right: 125px;
   z-index: 3;
 }
 

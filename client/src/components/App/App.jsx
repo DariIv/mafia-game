@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { store } from '../../redux/store'
-import './App.css'
+import style from './App.module.css'
 
 
 import Navigation from "../Navigation/Navigation";
 import Registration from "../Registration/Registration";
-import Footer from "../Footer/Footer";
 import Rules from "../Rules/Rules"
 import Home from '../Home/Home';
 import Room from '../Room/Room';
@@ -31,15 +30,12 @@ function App(props) {
           <Route path="/rules" element={<Rules />} />
           <Route path="/room/:id" element={<Room />} />
           <Route path='logout' element={<Logout />} />
-          {/* <Route path="/video" element={<Main />} /> */}
           <Route path="*" element={<Error404 />} />
         </Routes>
 
-        <Footer />
-
       </BrowserRouter>
 
-    </Provider>
+    </Provider >
 
   );
 }

@@ -3,30 +3,32 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  color: rgb(59, 59, 59);
+  height: 70px;
+  color: rgb(66, 66, 66);
   background-color: rgb(31, 31, 31);
+  border: solid rgb(24, 24, 24); 
   
 }
 
 .links{
   margin: 15px;
   color: rgb(158, 158, 158);
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 20px;
   text-decoration: none;
 }
 
 .links:hover{
-  color: rgb(194, 63, 58);
+  color: rgb(218, 34, 28);
   transition: all 500ms ease;
 }
 
 .mafiaColorLink{
-  
+  padding-left: 40px;
+  padding-right: 40px;
   margin: 15px;
-  color: brown;
-  font-size: 27px;
+  color: rgb(187, 37, 37);
+  font-size: 36px;
   font-weight: 20px;
   text-decoration: none;
 }
@@ -34,5 +36,10 @@
 .mafiaColorLink:hover{
   color: rgb(255, 255, 255);
   transition: all 500ms ease;
+}
+
+.linksWrapper{
+  padding-left: 40px;
+  padding-right: 40px;
 }
 

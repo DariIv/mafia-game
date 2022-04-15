@@ -1,6 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import style from './Navigation.module.css'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
+
+
+
 
 function Navigation(props) {
   let user = localStorage.getItem('userName')

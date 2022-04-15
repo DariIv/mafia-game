@@ -1,12 +1,7 @@
 import { useParams } from 'react-router';
 import style from './Room.module.css';
-import Chat from '../Chat/Chat';
 import useWebRTC, { LOCAL_VIDEO } from '../customHooks/useWebRTC';
-import { useSelector } from 'react-redux';
-import { useCallback } from 'react';
-import TaimerStart from '../TaimerStart/TaimerStart';
-import ModalForPeople from '../ModalForPeople/ModalForPeople';
-import Role from '../Role/Role';
+
 
 // import { useEffect, useLayoutEffect, useState } from 'react';
 // import { socket } from '../../socket/socket.chat';
@@ -20,8 +15,6 @@ export default function Room() {
   let role = ['мирный', 'мафия', 'мирный', 'мирный'];
   let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
-  let name = ['ETO YA', 'slon', 'epta']
-  let client = clients.map((el, index) => el = { newClient: el, userName: name[index] })
 
 
   return (
@@ -51,7 +44,7 @@ export default function Room() {
             );
           })}
         </div>
-        <div className={style.startGameButton}>
+        {/* <div className={style.startGameButton}>
           <TaimerStart />
           <div>
             <Role />
@@ -60,7 +53,7 @@ export default function Room() {
         <div>
           <Chat />
         </div>
-        <ModalForPeople />
+        <ModalForPeople /> */}
       </div>
 
     </>

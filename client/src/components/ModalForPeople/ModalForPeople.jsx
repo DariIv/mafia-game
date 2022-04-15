@@ -5,7 +5,6 @@ function ModalForPeople({night}) {
   return (
     <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
       <div className='modalBody'>
-
       </div>
     </div>
   );

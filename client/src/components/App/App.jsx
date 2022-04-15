@@ -24,12 +24,12 @@ function App(props) {
         <Navigation /> 
 
         <Routes>
-         <Route path="/" element={<Home />} />
+         <Route path="/" element={<Registration />} />
          <Route path="/rules" element={<Rules />} /> 
          <Route path="*" element={<Error404 />} /> 
          <Route path="/registration" element={<Registration />} />
          <Route path="/room/:id" element={<Room />} />
-         {/* <Route path="/video" element={<Main />} /> */}
+         <Route path="/game" element={<Home />}/>
         </Routes>
 
         {/* <Footer /> */}

@@ -13,7 +13,7 @@
   align-content: flex-start;
   background-image:  url('https://images.alphacoders.com/797/thumb-1920-797067.jpg');
   height: 100vh;
-  
+  background-size: cover;
 }
 
 .videoWrapper{

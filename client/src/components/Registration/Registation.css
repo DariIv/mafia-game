@@ -67,7 +67,7 @@ body {
   font-family: inherit;
   font-size: 16px;
   letter-spacing: 0.5px;
-  color: #999;
+  color: rgb(255, 255, 255);
   background-color: transparent;
   border: none;
   outline: none;
@@ -78,14 +78,14 @@ body {
 .form-wrapper.is-active .switcher-login {
   font-weight: 600;
   font-size: 25px;
-  color: rgb(230, 0, 0);
+  color: rgb(209, 209, 209);
   transform: translateX(90px);
 }
 
 .form-wrapper.is-active .switcher-signup {
   font-weight: 600;
   font-size: 25px;
-  color: rgb(230, 0, 0);
+  color: rgb(255, 255, 255);
   transform: translateX(-90px);
 }
 
@@ -297,6 +297,7 @@ body {
 }
 
 .regWrap{
-  background-image: url('https://images.alphacoders.com/797/thumb-1920-797067.jpg');
+  background-image: url('https://www.nextech.sk/files/photo/2018-04/42368/b9cc43/682dfd10e538e12ef2d181209f1f060c.jpg');
+  background-size: cover;
   height: 100vh;
 }

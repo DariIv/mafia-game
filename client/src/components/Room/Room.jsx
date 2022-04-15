@@ -10,7 +10,7 @@ export default function Room() {
 
   const { id: roomID } = useParams();
   const { clients, provideMediaRef } = useWebRTC(roomID);
-  let role = ['мирный', 'мафия', 'мирный', 'мирный'];
+  let role = ['МИРНЫЙ', 'МАФИЯ', 'МИРНЫЙ', 'МИРНЫЙ'];
   let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
 
@@ -19,11 +19,9 @@ export default function Room() {
 
       <div className={style.wrapper}>
         <div className={style.videoWrapper}>
-
           {clients.map((clientID, users, xz) => {
             return (
               <div className={style.blockVideo} key={clientID} id={clientID}>
-                <span style={{ fontSize: '20px' }}> Name:{clientID.slice(0, 4)} </span>
                 <video
                   className={style.video}
                   width='320px'
@@ -40,11 +38,12 @@ export default function Room() {
 
             );
           })}
+          <span style={{ fontSize: '20px' }}> NAME:{clientID.slice(0, 4)} </span>
         </div>
         <div className={style.startGameButton}>
           <TaimerStart />
           <div>
-            <Role randomRole={randomRole}/>
+            <Role randomRole={randomRole} />
           </div>
         </div>
         <div>

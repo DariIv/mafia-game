@@ -4,7 +4,7 @@ import './Role.css'
 function Role({randomRole}) {
   return (
     <div className='container cardRole'>
-      <h5 class="card-title"> Твоя роль: {randomRole}</h5>
+      <h5 class="card-title"> ТВОЯ РОЛЬ: {randomRole}</h5>
     </div>
   );
 }

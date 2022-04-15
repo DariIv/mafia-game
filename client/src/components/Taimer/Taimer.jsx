@@ -86,7 +86,7 @@ function Taimer(props) {
               // onUpdate={(remainingTime: 1) => }
 
               isPlaying={true}             //можно навесить кнопку паузы (true/false)
-              duration={5}          //установка секунд
+              duration={30}          //установка секунд
               colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
               colorsTime={[230, 120, 60, 0]}
               onComplete={() => ({ shouldRepeat: true, delay: 5 })}
@@ -111,7 +111,7 @@ function Taimer(props) {
 
               // initialRemainingTime={59} //хчерез сколько секунд начнется основной таймер
               isPlaying={true}             //можно навесить кнопку паузы (true/false)
-              duration={50}          //установка секунд
+              duration={30}          //установка секунд
               colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
               colorsTime={[45, 25, 10, 0]}
               onComplete={() => ({ shouldRepeat: true, delay: 15 })}

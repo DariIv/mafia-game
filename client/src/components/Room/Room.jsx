@@ -43,20 +43,20 @@ export default function Room() {
       <div className='wrapper'>
         <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
         <div className='videoWrapper'>
-          {client.map((clientID, index, xz) => {
+          {clients.map((clientID, index, xz) => {
             return (
-              <div className='blockVideo' key={clientID.newClient} id={clientID.newClient}>
-                <span style={{ fontSize: '15px' }}>id:{clientID.userName} </span>
+              <div className='blockVideo' key={clientID} id={clientID}>
+                <span style={{ fontSize: '20px' }}>id:{clientID} </span>
                 <video
                   className='video'
                   width='245px'
                   height='140px'
                   ref={instance => {
-                    provideMediaRef(clientID.newClient, instance);
+                    provideMediaRef(clientID, instance);
                   }}
                   autoPlay
                   playsInline
-                  muted={clientID.newClient === LOCAL_VIDEO}
+                  muted={clientID === LOCAL_VIDEO}
                 />
               </div>
 

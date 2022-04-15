@@ -14,6 +14,7 @@ import Room from '../Room/Room';
 
 // import Chat from "../Chat/Chat";
 import Error404 from '../Error404/Error404'
+import Logout from "../Logout/Logout";
 
 
 function App(props) {
@@ -21,16 +22,17 @@ function App(props) {
     <Provider store={store}>
       <BrowserRouter>
 
-        <Navigation /> 
+        <Navigation />
 
         <Routes>
-         <Route path="/game" element={<Home />} />
-         <Route path="/" element={<Registration />} />
-         <Route path="/registration" element={<Registration />} />
-         <Route path="/rules" element={<Rules />} /> 
-         <Route path="/room/:id" element={<Room />} />
-         {/* <Route path="/video" element={<Main />} /> */}
-         <Route path="*" element={<Error404 />} /> 
+          <Route path="/game" element={<Home />} />
+          <Route path="/" element={<Registration />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="/room/:id" element={<Room />} />
+          <Route path='logout' element={<Logout />} />
+          {/* <Route path="/video" element={<Main />} /> */}
+          <Route path="*" element={<Error404 />} />
         </Routes>
 
         <Footer />

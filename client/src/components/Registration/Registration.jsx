@@ -66,7 +66,7 @@ function Registration(props) {
           setSucCheck(true)
           localStorage.setItem('userName',  data.name)
           setTimeout(() => {
-            window.location.href = '/'
+            window.location.href = '/game'
             // navigate('/profile')
           }, 1000)
         }
@@ -106,7 +106,7 @@ function Registration(props) {
           dispatch(addUserAc(data));
           localStorage.setItem('userName', data.name)
           setTimeout(() => {
-            window.location.href = '/'
+            window.location.href = '/game'
             // navigate('/profile')
           }, 1000)
         }

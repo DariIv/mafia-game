@@ -55,7 +55,6 @@ export default function Room() {
         </div>
         <ModalForPeople />
       </div>
-
     </>
   );
 }

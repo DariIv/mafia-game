@@ -34,11 +34,11 @@ export default function Room() {
                   muted={clientID === LOCAL_VIDEO}
                 />
 
+                <span style={{ fontSize: '20px' }}> NAME:{clientID.slice(0, 4)} </span>
               </div>
 
             );
           })}
-          <span style={{ fontSize: '20px' }}> NAME:{clientID.slice(0, 4)} </span>
         </div>
         <div className={style.startGameButton}>
           <TaimerStart />

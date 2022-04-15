@@ -44,7 +44,7 @@ export default function Room() {
         <div className={style.startGameButton}>
           <TaimerStart />
           <div>
-            <Role />
+            <Role randomRole={randomRole}/>
           </div>
         </div>
         <div>

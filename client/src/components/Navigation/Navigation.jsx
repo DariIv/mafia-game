@@ -13,7 +13,8 @@ function Navigation(props) {
     <>
       <div className={style.nawWrapper}>
         <div>
-          <Link className={style.mafiaColorLink} to='/game'>MAFIA</Link>
+
+          <Link className={style.mafiaColorLink} to={user?'/game':'/'}>MAFIA</Link>
         </div>
         <div>
           {user ?

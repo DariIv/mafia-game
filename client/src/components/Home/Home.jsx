@@ -22,31 +22,32 @@ function Home(props) {
     });
   }, []);
   console.log(rooms);
+  const clients = ['123', '1231']
   return (
     <div className={style.gameWrapper}>
 
       <div className={style.regGame} ref={rootNode}>
-      
-        
-          <h3>ДОСТУПНЫЕ КОМНАТЫ:</h3>
 
-          <ul className={style.roomsList}>
-            {rooms.map(roomID => (
-              <li className={style.roomsLi} key={roomID}>
-                {/* {roomID} */}
-                <button className="btn btn-secondary" onClick={() => {
-                  navigate(`/room/${roomID}`)  //добавляем комнаты
-                }}>ПРИСОЕДИНИТЬСЯ К КОМНАТЕ</button>
-              </li>
-            ))}
-          </ul>
 
-          <button className="btn btn-secondary" onClick={() => {
-            navigate(`/room/${v4()}`)  //создаем свою комнату, генерим комнату и айдишку
-          }}>СОЗДАТЬ НОВУЮ КОМНАТУ</button>
+        <h3>ДОСТУПНЫЕ КОМНАТЫ:</h3>
+
+        <ul className={style.roomsList}>
+          {rooms.map(roomID => (
+            <li className={style.roomsLi} key={roomID}>
+              {/* {roomID} */}
+              <button className="btn btn-secondary" onClick={() => {
+                navigate(`/room/${roomID}`)  //добавляем комнаты
+              }}>ПРИСОЕДИНИТЬСЯ К КОМНАТЕ</button>
+            </li>
+          ))}
+        </ul>
+
+        <button className="btn btn-secondary" onClick={() => {
+          navigate(`/room/${v4()}`)  //создаем свою комнату, генерим комнату и айдишку
+        }}>СОЗДАТЬ НОВУЮ КОМНАТУ</button>
 
       </div>
-      
+
     </div>
   );
 }

@@ -41,7 +41,6 @@ export default function useWebRTC(roomID) {
           socket.emit(ACTIONS.RELAY_ICE, {
             peerID,
             iceCandidate: event.candidate,
-            users: {user: 'vottema'}
           });
         }
       }

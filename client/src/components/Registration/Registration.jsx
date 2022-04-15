@@ -104,7 +104,7 @@ function Registration(props) {
           setErrCheck(false)
           setSucCheck(true)
           dispatch(addUserAc(data));
-          localStorage.setItem('user_name', data.name)
+          localStorage.setItem('userName', data.name)
           setTimeout(() => {
             window.location.href = '/'
             // navigate('/profile')

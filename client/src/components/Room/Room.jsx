@@ -20,8 +20,8 @@ export default function Room() {
   let role = ['мирный', 'мафия', 'мирный', 'мирный'];
   let randomRole = role[Math.floor(Math.random() * 3)]
   localStorage.setItem('randomRole', randomRole)
-  let name = ['giena', 'slon']
-  let client = clients.map((el,index) => el = {newClient:el, userName: name})
+  let name = ['ETO YA', 'slon', 'epta']
+  let client = clients.map((el,index) => el = {newClient:el, userName: name[index]})
   // let num ;
   // let el ;
 
@@ -46,7 +46,7 @@ export default function Room() {
           {client.map((clientID, index, xz) => {
             return (
               <div className='blockVideo' key={clientID.newClient} id={clientID.newClient}>
-                <span style={{ fontSize: '15px' }}>id:{clientID.userName[index]} </span>
+                <span style={{ fontSize: '15px' }}>id:{clientID.userName} </span>
                 <video
                   className='video'
                   width='245px'

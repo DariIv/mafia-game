@@ -22,3 +22,7 @@
   justify-content: start;
   width: 70%;
 }
+
+.startGameButton{
+  align-items: flex-star;
+}

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import TaimerStart from '../TaimerStart/TaimerStart';
 import ModalForPeople from '../ModalForPeople/ModalForPeople';
-let randomProfile = require('random-profile-generator');
+import Role from '../Role/Role';
 
 // import { useEffect, useLayoutEffect, useState } from 'react';
 // import { socket } from '../../socket/socket.chat';
@@ -17,10 +17,7 @@ export default function Room() {
   // const dispatch = useDispatch()
   const { id: roomID } = useParams();
   const { clients, provideMediaRef } = useWebRTC(roomID);
-  let profile = randomProfile.profile()
-  const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
-  const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] })
-  // const { nick } = useSelector(state => state.nickReducer)
+
 
   return (
     <>
@@ -43,20 +40,24 @@ export default function Room() {
                   playsInline
                   muted={clientID === LOCAL_VIDEO}
                 />
-                {randomName}
+                
               </div>
 
             );
           })}
         </div>
-          <TaimerStart />
         <div className={style.startGameButton}>
+          <TaimerStart />
+          <div>
+        <Role/>
+      </div>
         </div>
         <div>
           <Chat />
         </div>
         <ModalForPeople />
       </div>
+      
     </>
   );
 }

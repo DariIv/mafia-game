@@ -20,15 +20,15 @@ export default function Room() {
   return (
     <>
 
-      <div className={style.wrapper}>
-        <div className={style.videoWrapper}>
+      <div className='wrapper'>
+        <div className='videoWrapper'>
 
           {clients.map((clientID, users, xz) => {
             return (
-              <div className={style.blockVideo} key={clientID} id={clientID}>
+              <div className='blockVideo' key={clientID} id={clientID}>
                 <span style={{ fontSize: '20px' }}> Name:{clientID.slice(0, 4)} </span>
                 <video
-                  className={style.video}
+                  className='video'
                   width='320px'
                   height='200px'
                   ref={instance => {
@@ -44,7 +44,7 @@ export default function Room() {
             );
           })}
         </div>
-        <div className={style.startGameButton}>
+        <div className='startGameButton'>
           <TaimerStart />
           <div>
             <Role />

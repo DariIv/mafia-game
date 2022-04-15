@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './RoleAccordion.css'
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ title, content, image }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -10,9 +10,12 @@ const Accordion = ({ title, content }) => {
         <div>{title}</div>
         <div>{isActive ? '-' : '+'}</div>
       </div>
+      <div className='accordionWrapper'>
       {isActive && <div className="accordion-content">{content}</div>}
+      {isActive && <img width='150px' src={image} alt=''/>}
+      </div>
     </div>
   );
-};
+}; 
 
 export default Accordion;

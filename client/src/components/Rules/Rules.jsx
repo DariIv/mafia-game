@@ -38,8 +38,8 @@ function Rules(props) {
         <div className={style.rolesAccordion}>
           <h3>Игровые роли</h3>
           <div className="accordion">
-            {rolesData.map(({ title, content }) => (
-              <RoleAccordion title={title} content={content} />
+            {rolesData.map(({ title, content, image }) => (
+              <RoleAccordion title={title} content={content} image={image}/>
             ))}
           </div>
         </div>

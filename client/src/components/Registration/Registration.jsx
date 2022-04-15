@@ -91,10 +91,10 @@ function Registration(props) {
           setMessage(data.message)
           setErrCheck(false)
           setSucCheck(true)
-          dispatch(addUserAc(data));
+          window.location.href = '/game'
+          // dispatch(addUserAc(data));
           localStorage.setItem('userName', data.name)
           setTimeout(() => {
-            window.location.href = '/game'
             // navigate('/profile')
           }, 1000)
         }

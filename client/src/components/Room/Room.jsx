@@ -26,7 +26,7 @@ export default function Room() {
           {clients.map((clientID, users, xz) => {
             return (
               <div className={style.blockVideo} key={clientID} id={clientID}>
-                <span> style={{ fontSize: '20px' }}Name:{clientID.slice(0, 4)} </span>
+                <span style={{ fontSize: '20px' }}> Name:{clientID.slice(0, 4)} </span>
                 <video
                   className={style.video}
                   width='320px'
@@ -44,7 +44,7 @@ export default function Room() {
             );
           })}
         </div>
-        {/* <div className={style.startGameButton}>
+        <div className={style.startGameButton}>
           <TaimerStart />
           <div>
             <Role />
@@ -53,7 +53,7 @@ export default function Room() {
         <div>
           <Chat />
         </div>
-        <ModalForPeople /> */}
+        <ModalForPeople />
       </div>
 
     </>

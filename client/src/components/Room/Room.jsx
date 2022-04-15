@@ -41,12 +41,12 @@ export default function Room() {
     <>
 
       <div className='wrapper'>
-        <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br />
+        {/* <span style={{ fontSize: '15px' }}>Я: {localStorage.getItem('randomRole')}</span><br /> */}
         <div className='videoWrapper'>
           {clients.map((clientID, index, xz) => {
             return (
               <div className='blockVideo' key={clientID} id={clientID}>
-                <span style={{ fontSize: '20px' }}>id:{clientID} </span>
+                <span style={{ fontSize: '20px' }}>Name:{clientID.slice(0,4)} </span>
                 <video
                   className='video'
                   width='245px'

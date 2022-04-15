@@ -13,6 +13,9 @@ function Logout(props) {
   //   })
   // }, [dispatch])
   localStorage.removeItem('userName')
+  setTimeout(() => {
+    window.location.href = '/'
+  }, 5000);
 
   return (
 

@@ -8,9 +8,6 @@ function ModalVote({ night }) {
     <>
         <div className={night ? 'modalWrapper openModalWrapper' : 'modalWrapper closedModalWrapper'}>
           <div className='modalBody'>
-            <Voting>
-              <Container />
-            </Voting>
           </div>
         </div>
       

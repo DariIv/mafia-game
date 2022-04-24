@@ -94,7 +94,7 @@ export default function useWebRTC(roomID) {
       socket.off(ACTIONS.ADD_PEER);
     }
   }, []);
-
+ 
   useEffect(() => {
     async function setRemoteMedia({peerID, sessionDescription: remoteDescription}) {
       await peerConnections.current[peerID]?.setRemoteDescription(
